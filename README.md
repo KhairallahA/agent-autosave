@@ -111,7 +111,7 @@ curl -fsSL https://raw.githubusercontent.com/KhairallahA/agent-autosave/main/ins
 POSIX `sh`, no `sudo`, never edits your shell profile. It uses pipx if you
 have it, otherwise a private virtualenv in `~/.local/share/agent-autosave`
 linked to `~/.local/bin/agent-autosave`. Options (`--version`, `--method`,
-`--from`) go after `sh -s --`.
+`--from`, `--uninstall`) go after `sh -s --`.
 
 ### pipx
 
@@ -184,6 +184,10 @@ agent-autosave handoff import          # their side, on the same branch
 agent-autosave remove codex            # undo one agent's changes, byte for byte
 agent-autosave remove --all            # undo every agent's changes
 ```
+
+When a task is finished, `agent-autosave done` marks it so the next prompt
+starts a new one; `agent-autosave memory review` goes through the notes your
+agents proposed. Every command and flag is in [Commands](#commands).
 
 ## The setup wizard
 
@@ -386,7 +390,7 @@ envelope and error codes are stable: [contracts](https://github.com/KhairallahA/
 
 | Command | What it prints | Exit codes |
 | --- | --- | --- |
-| `init [--yes] [--agents a,b] [--reconfigure] [--user-level]` | The wizard, then what it wrote | 0; 1 an agent is not installed, or Codex does not trust the folder; 2 bad flags, or `--reconfigure` without a terminal; 5 a config file it cannot merge |
+| `init [--yes] [--agents a,b] [--reconfigure] [--user-level] [--no-mcp]` | The wizard, then what it wrote | 0; 1 an agent is not installed, or Codex does not trust the folder; 2 bad flags, or `--reconfigure` without a terminal; 5 a config file it cannot merge |
 | `status [--all]` | Status, goal, plan progress, where it stopped, what fails, next step, handoffs, usage; `--all` lists every branch's task | 0; 1 not set up or no save yet |
 | `show [--md \| --context [--explain] \| --json] [--task ID]` | `SAVE.md`, the resume block (`--explain`: each section, its size and whether it fit) or `save.json`, of this branch or another task | 0; 1 not set up, no save, or no such task |
 | `resume <agent> \| --next [--dry-run] [--task ID]` | Records the handoff and runs the agent (or prints what it would run); `--next` takes the agent after the last one in `switch.order` | 0; 1 nothing to resume, no next agent, no such task, or agent not installed; 2 agent cannot take a prompt |
@@ -400,20 +404,22 @@ envelope and error codes are stable: [contracts](https://github.com/KhairallahA/
 | `history [--limit N]` | Archived saves, newest first | 0; 1 not set up; 2 bad limit |
 | `clear` | The archive path and the new task id | 0; 1 not set up |
 | `doctor [--prune]` | One line per check, each problem with its fix | 0 all green; 1 a red check |
-| `add <agent> [--user-level]` | The files it wrote | 0; 1 not set up, agent not installed, Codex untrusted, or Codex's hooks are user-level here; 5 a config file it cannot merge |
+| `add <agent> [--user-level] [--mcp]` | The files it wrote | 0; 1 not set up, agent not installed, Codex untrusted, or Codex's hooks are user-level here; 5 a config file it cannot merge |
 | `remove <agent> \| --all` | Each file restored | 0; 1 not installed here, or one of its additions was edited by hand; 2 no agent and no `--all`; 5 a file it cannot read |
-| `upgrade [--dry-run \| --yes]` | What changed, or `up to date` | 0; 1 not set up, or Codex's hooks are user-level; 5 a file it cannot merge |
-| `record on [--dir D] \| off` | Where recordings go | 0; 2 `config.json` is not valid |
+| `upgrade [--dry-run \| --yes] [--user-level]` | What changed, or `up to date` | 0; 1 not set up, or Codex's hooks are user-level; 5 a file it cannot merge |
+| `record on [--dir D] [--agent-version V] \| off` | Where recordings go | 0; 2 `config.json` is not valid |
 | `memory list [--type T] [--all]` | The entries in `MEMORY.md` | 0; 1 not set up |
 | `memory review` | Every waiting candidate; in a terminal, then each one: accept, edit, reject or skip | 0; 1 not set up |
 | `memory accept <id> [--text TEXT]` / `memory reject <id> [--reason TEXT]` | The new entry, or the rejected candidate | 0; 1 no such candidate |
 | `memory add --type T TEXT [--until DATE] [--replaces ID]` | Added (in a terminal) or proposed for review | 0; 1 no such entry to replace; 2 bad date |
 | `memory pin <id>` / `memory forget <id>` | The changed entry | 0; 1 no such entry |
+| `memory search TEXT` | Matching memory entries, agentic-stack lessons and journal pages | 0; 1 not set up |
+| `memory propose --type T TEXT` | The candidate, waiting for your review (what agents call; it never accepts) | 0; 1 not set up; 2 bad type |
 | `journal [--search TEXT \| --path TASK_ID]` | Journal pages, newest first, or one task's page | 0; 1 no page for that task |
 | `vault move [--yes]` | The journal and `MEMORY.md` files it moves (`--yes` moves them) | 0; 1 no usable vault |
 | `share on \| off` | Whether `MEMORY.md` and the journal are committed | 0; 1 secrets found, or our `.gitignore` block was edited; 2 memory lives in a vault |
 | `handoff export \| import` | Writes `.autosave-handoff.md`, or replays it into a task here | 0; 1 no handoff file, or it holds no events; 2 unreadable, or exported from another branch |
-| `mcp` | Nothing: an MCP server on stdio, started by the agent | 0 |
+| `mcp [--project DIR]` | Nothing: an MCP server on stdio, started by the agent | 0 |
 
 The hook entry point, `agent-autosave hook <agent> <event>`, always exits 0.
 An unexpected error exits 5 and is logged in `.autosave/errors.log`.
