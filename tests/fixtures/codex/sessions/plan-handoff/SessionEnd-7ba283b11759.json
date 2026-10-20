@@ -1,0 +1,14 @@
+{
+  "agent": "codex",
+  "agent_version": "codex-cli 0.162.1",
+  "payload": {
+    "cwd": "/private/tmp/aa-codex",
+    "hook_event_name": "SessionEnd",
+    "reason": "other",
+    "session_id": "01a13fcf-8e57-74a1-a470-85223a85e402",
+    "transcript_path": "~/.codex/sessions/2026/10/15/rollout-2026-10-15T16-45-29-01a13fcf-8e57-74a1-a470-85223a85e402.jsonl"
+  },
+  "provenance": "Real hook stdin captured by agent-autosave record mode; secrets redacted, home directory shown as ~",
+  "recorded_at": "2026-10-15T13:46:45.238621Z",
+  "v": 1
+}

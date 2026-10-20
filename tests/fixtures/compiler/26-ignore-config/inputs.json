@@ -1,0 +1,12 @@
+{
+  "config": {
+    "capture": {
+      "ignore_paths": [
+        "*.log"
+      ],
+      "ignore_tools": [
+        "Bash"
+      ]
+    }
+  }
+}

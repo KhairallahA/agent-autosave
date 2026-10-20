@@ -1,0 +1,17 @@
+agent-autosave
+Copyright 2026 Khairallah and agent-autosave contributors
+
+Licensed under the Apache License, Version 2.0.
+
+The repository structure, manifest-driven adapter approach, file-backed state,
+and CLI conventions were inspired by agentic-stack, authored by Avidlive:
+https://github.com/codejunkie99/agentic-stack
+
+The optional agentic-stack integration (docs/integrations/agentic-stack.md)
+reads agentic-stack's documented file layout and runs its own track.py; it
+was written from agentic-stack's repository at commit
+11a75e16b6cb08a436b3124474273fdb9f08b4de.
+
+agent-autosave is an independent implementation. No agentic-stack source code
+was copied. This attribution acknowledges design inspiration, not affiliation
+or endorsement.

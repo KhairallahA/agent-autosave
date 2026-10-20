@@ -1,0 +1,7 @@
+{
+  "agent-autosave": {
+    "SessionStart": [{"type": "command", "command": "agent-autosave hook antigravity SessionStart", "timeout": 5}],
+    "PostToolUse":  [{"matcher": "*", "hooks": [{"type": "command", "command": "agent-autosave hook antigravity PostToolUse", "timeout": 5}]}],
+    "Stop":         [{"type": "command", "command": "agent-autosave hook antigravity Stop", "timeout": 5}]
+  }
+}

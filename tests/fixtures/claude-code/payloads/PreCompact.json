@@ -1,0 +1,15 @@
+{
+  "claude_version": "2.1.291",
+  "payload": {
+    "custom_instructions": "Preserve the scratch task plan and failing command.",
+    "cwd": "/private/tmp/agent-autosave-m2-audit-retry",
+    "hook_event_name": "PreCompact",
+    "prompt_id": "646feb97-a099-4a9f-a60a-96eb045fa71b",
+    "session_id": "c4e76590-bf89-4379-b56d-4d7db42857b1",
+    "transcript_path": "~/.claude/projects/-private-tmp-agent-autosave-m2-audit-retry/c4e76590-bf89-4379-b56d-4d7db42857b1.jsonl",
+    "trigger": "manual"
+  },
+  "provenance": "Claude Code hook stdin; secrets and home prefix redacted",
+  "recorded_at": "2026-10-14T18:54:04.345031Z",
+  "v": 1
+}

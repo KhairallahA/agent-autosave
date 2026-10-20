@@ -1,0 +1,23 @@
+{
+  "agent": "claude-code",
+  "agent_version": "2.1.291 (Claude Code)",
+  "payload": {
+    "background_tasks": [],
+    "cwd": "/private/tmp/aa-scratch",
+    "effort": {
+      "level": "medium"
+    },
+    "hook_event_name": "Stop",
+    "last_assistant_message": "At session start, the agent-autosave hook said a previous Claude Code session in this repo ended at 02:02 UTC with its task unfinished. It recorded:\n\n- **Goal:** Use the todo/task tool to make a 3-step plan (write `hello.py`, run it, add a failing check), then do **step 1 only**: write a `hello.py` that prints `\"hello autosave\"`.\n- **Last actions** (newest first):\n  1. Ran `python3 -c \"raise SystemExit(7)\"`, which exited with code 7\n  2. Ran `python3 hello.py`, which exited with code 0\n  3. Wrote `hello.py`\n- **Failing command:** `python3 -c \"raise SystemExit(7)\"` (exit 7)\n- **Git:** branch `master`, with uncommitted changes in `.claude/settings.json`, `.gitignore`, `CLAUDE.md` and `hello.py`\n- **Suggested next step:** \"Make `python3 -c \"raise SystemExit(7)\"` pass.\"\n- **Where the full save is:** `.autosave/SAVE.md`. Git wins if the two disagree.\n\nSome things to know before acting on it:\n\n- **The \"failing\" command isn't a real bug.** `raise SystemExit(7)` is written to exit with code 7, so it looks like the \"add a failing check\" step from the plan. Making it \"pass\" would mean deleting or rewriting that check, which probably isn't what anyone wants.\n- **The previous session went past what the goal allowed.** The goal said to do step 1 only, but the session also ran the script and the failing check.\n- **Step 1 looks done.** `hello.py` exists, and running it exited with code 0.\n- **Parts of the save don't match git.** The git status at session start shows these files as untracked, not as uncommitted changes. It lists `.claude/` as a folder rather than `.claude/settings.json`, and the repo has no commits yet.\n\nI haven't acted on any of this. If you want, I can check that `hello.py` prints the right text, or pick up the plan from wherever you choose.",
+    "permission_mode": "auto",
+    "prompt_id": "dbb329fd-4284-4630-9027-dfecbfa14658",
+    "scratchpad_dir": "/private/tmp/claude-501/-private-tmp-aa-scratch/04a94e9a-a3bb-4ccf-b83a-579d1f92197b/scratchpad",
+    "session_crons": [],
+    "session_id": "04a94e9a-a3bb-4ccf-b83a-579d1f92197b",
+    "stop_hook_active": false,
+    "transcript_path": "~/.claude/projects/-private-tmp-aa-scratch/04a94e9a-a3bb-4ccf-b83a-579d1f92197b.jsonl"
+  },
+  "provenance": "Real hook stdin captured by agent-autosave record mode; secrets and home prefix redacted",
+  "recorded_at": "2026-10-15T02:05:01.022621Z",
+  "v": 1
+}

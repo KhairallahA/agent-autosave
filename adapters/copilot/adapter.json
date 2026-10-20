@@ -1,0 +1,8 @@
+{
+  "name": "copilot",
+  "description": "GitHub Copilot CLI: hooks in .github/hooks/agent-autosave.json (from the docs, not yet recorded); save injected at SessionStart; shares the AGENTS.md block.",
+  "files": [
+    {"src": "hooks.json", "dst": ".github/hooks/agent-autosave.json", "merge_policy": "merge_json"},
+    {"src": "AGENTS.block.md", "dst": "AGENTS.md", "merge_policy": "managed_block"}
+  ]
+}

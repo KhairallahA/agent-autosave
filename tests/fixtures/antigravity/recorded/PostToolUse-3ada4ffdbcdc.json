@@ -1,0 +1,29 @@
+{
+  "agent": "antigravity",
+  "agent_version": "1.4.2",
+  "payload": {
+    "artifactDirectoryPath": "~/.gemini/antigravity-cli/brain/957037ff-fd44-45c6-8698-406e55371908",
+    "conversationId": "957037ff-fd44-45c6-8698-406e55371908",
+    "error": "",
+    "modelName": "gemini-4-argon-medium",
+    "stepIdx": 2,
+    "toolCall": {
+      "args": {
+        "CodeContent": "print(\"hi\")\n",
+        "Description": "Create hello.py that prints hi",
+        "Overwrite": true,
+        "TargetFile": "/tmp/aa-agy/hello.py",
+        "toolAction": "Creating hello.py",
+        "toolSummary": "Create hello.py"
+      },
+      "name": "write_to_file"
+    },
+    "transcriptPath": "~/.gemini/antigravity-cli/brain/957037ff-fd44-45c6-8698-406e55371908/.system_generated/logs/transcript_full.jsonl",
+    "workspacePaths": [
+      "/tmp/aa-agy"
+    ]
+  },
+  "provenance": "Real hook stdin captured by agent-autosave record mode; secrets redacted, home directory shown as ~",
+  "recorded_at": "2026-10-19T19:24:10.027538Z",
+  "v": 1
+}

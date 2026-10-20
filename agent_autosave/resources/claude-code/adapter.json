@@ -1,0 +1,10 @@
+{
+  "name": "claude-code",
+  "description": "Claude Code: hooks in .claude/settings.json; save injected at SessionStart; rate-limit capture via StopFailure.",
+  "files": [
+    {"src": "hooks.json", "dst": ".claude/settings.json", "merge_policy": "merge_json"},
+    {"src": "CLAUDE.block.md", "dst": "CLAUDE.md", "merge_policy": "managed_block"},
+    {"src": "mcp.json", "dst": ".mcp.json", "merge_policy": "merge_json", "feature": "mcp"},
+    {"src": "statusline.json", "dst": ".claude/settings.json", "merge_policy": "merge_json", "feature": "statusline"}
+  ]
+}

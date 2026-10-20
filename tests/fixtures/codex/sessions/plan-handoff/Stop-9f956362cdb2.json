@@ -1,0 +1,18 @@
+{
+  "agent": "codex",
+  "agent_version": "codex-cli 0.162.1",
+  "payload": {
+    "cwd": "/private/tmp/aa-codex",
+    "hook_event_name": "Stop",
+    "last_assistant_message": "`python3 hello.py` printed `hello autosave`.\n\n`python3 -c \"raise SystemExit(7)\"` exited with code 7. Stopped without fixing it.",
+    "model": "gpt-6-astra",
+    "permission_mode": "default",
+    "session_id": "01a13fcf-cfdf-7582-8790-29210a9b34f3",
+    "stop_hook_active": false,
+    "transcript_path": "~/.codex/sessions/2026/10/15/rollout-2026-10-15T16-45-46-01a13fcf-cfdf-7582-8790-29210a9b34f3.jsonl",
+    "turn_id": "01a13fd1-e486-7ae1-95c9-6b8ae7e31eb1"
+  },
+  "provenance": "Real hook stdin captured by agent-autosave record mode; secrets redacted, home directory shown as ~",
+  "recorded_at": "2026-10-15T13:48:36.721916Z",
+  "v": 1
+}

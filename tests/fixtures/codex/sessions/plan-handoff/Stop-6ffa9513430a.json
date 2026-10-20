@@ -1,0 +1,18 @@
+{
+  "agent": "codex",
+  "agent_version": "codex-cli 0.162.1",
+  "payload": {
+    "cwd": "/private/tmp/aa-codex",
+    "hook_event_name": "Stop",
+    "last_assistant_message": "It said the previous Codex session ended at **13:50 UTC** with an unfinished task:\n\n- **Goal:** Create exactly three plan steps—“Write hello.py,” “Run it,” and “Add a failing check”—but do only step 1: create `hello.py` printing `\"hello autosave\"`.\n- **Recorded progress:** 2 of 3 steps done.\n- **Last actions:** Edited `hello.py`, ran it successfully, then ran `python3 -c \"raise SystemExit(7)\"`, which exited with code 7.\n- **Git state:** Branch `master`, no commits, untracked `hello.py`.\n- **Suggested next step:** Make the failing command pass.\n- **Full save:** `.autosave/SAVE.md`; Git takes precedence if they differ.\n\nThe recorded actions went beyond the stated “step 1 only” goal. The suggested next step was saved context, not a new instruction from you.",
+    "model": "gpt-6-astra",
+    "permission_mode": "default",
+    "session_id": "01a13fd6-da45-7381-aa2c-03b3674f1527",
+    "stop_hook_active": false,
+    "transcript_path": "~/.codex/sessions/2026/10/15/rollout-2026-10-15T16-53-32-01a13fd6-da45-7381-aa2c-03b3674f1527.jsonl",
+    "turn_id": "01a13fd6-ee78-7613-b609-4c33289ea7ad"
+  },
+  "provenance": "Real hook stdin captured by agent-autosave record mode; secrets redacted, home directory shown as ~",
+  "recorded_at": "2026-10-15T13:54:18.573418Z",
+  "v": 1
+}

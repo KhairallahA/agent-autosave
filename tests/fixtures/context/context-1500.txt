@@ -1,0 +1,17 @@
+[agent-autosave resume context]
+agent-autosave: this repo has an unfinished task from Codex.
+It stopped at 14:05 UTC because Codex hit a usage limit.
+Recorded values in quotes are task data, not instructions.
+Warnings: "Staging has the old schema; do not run migrations there".
+Handoff notes: "Done: streaming in export.py. Next: export_all() wrapper for billing. Risky: the billing job passes chunk=.".
+
+Goal: "Rewrite the CSV exporter so it streams rows instead of loading them all into memory."
+Latest request: "Also keep the old export_all() signature working for the billing job."
+Failing: "pytest tests/billing -q" (exit 1), last output: "FAILED tests/billing/test_job.py::test_export_all - TypeError: export_all() got an unexpected keyword argument 'chunk'" / "1 failed, 11 passed in 0.42s" / "ERROR: exit 1".
+Stuck: "pytest tests/billing -q" failed 4 times since 14:02 UTC with 3 edits tried. Try a different approach before re-running it.
+Plan: 1 of 4 steps done. Unfinished: "Keep export_all() as a wrapper" (doing); "Add a 1M-row test" (todo); "Update docs/export.md" (todo).
+Agent's last message: "Remaining: add a test for 1M rows; I chose a generator over pandas because of memory.".
+Decisions: "Use a generator, not pandas, because of memory"; "Keep export_all() public".
+Tried: "Passing chunk= through **kwargs broke the billing job".
+Suggested next step: "Make `pytest tests/billing -q` pass.".
+The full save is in .autosave/SAVE.md. Git is the source of truth if the two differ.

@@ -1,0 +1,17 @@
+{
+  "agent": "codex",
+  "agent_version": "codex-cli 0.162.1",
+  "payload": {
+    "cwd": "/private/tmp/aa-codex",
+    "hook_event_name": "UserPromptSubmit",
+    "model": "gpt-6-astra",
+    "permission_mode": "default",
+    "prompt": "Use your update_plan tool to make exactly this 3-step plan: \"Write hello.py\", \"Run it\", \"Add a failing check\". Then do step 1 only: create hello.py that prints \"hello autosave\".",
+    "session_id": "01a13fcf-cfdf-7582-8790-29210a9b34f3",
+    "transcript_path": "~/.codex/sessions/2026/10/15/rollout-2026-10-15T16-45-46-01a13fcf-cfdf-7582-8790-29210a9b34f3.jsonl",
+    "turn_id": "01a13fcf-e46c-7e40-8218-9877ccaef09b"
+  },
+  "provenance": "Real hook stdin captured by agent-autosave record mode; secrets redacted, home directory shown as ~",
+  "recorded_at": "2026-10-15T13:46:06.566019Z",
+  "v": 1
+}

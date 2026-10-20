@@ -1,0 +1,18 @@
+{
+  "agent": "codex",
+  "agent_version": "codex-cli 0.162.1",
+  "payload": {
+    "cwd": "/private/tmp/aa-codex",
+    "hook_event_name": "Stop",
+    "last_assistant_message": "Recorded the exact plan using autosave (`update_plan` is unavailable). Created [hello.py](/private/tmp/aa-codex/hello.py) containing `print(\"hello autosave\")`.\n\n- [x] Write hello.py\n- [ ] Run it\n- [ ] Add a failing check",
+    "model": "gpt-6-astra",
+    "permission_mode": "default",
+    "session_id": "01a13fcf-cfdf-7582-8790-29210a9b34f3",
+    "stop_hook_active": false,
+    "transcript_path": "~/.codex/sessions/2026/10/15/rollout-2026-10-15T16-45-46-01a13fcf-cfdf-7582-8790-29210a9b34f3.jsonl",
+    "turn_id": "01a13fcf-e46c-7e40-8218-9877ccaef09b"
+  },
+  "provenance": "Real hook stdin captured by agent-autosave record mode; secrets redacted, home directory shown as ~",
+  "recorded_at": "2026-10-15T13:47:45.827142Z",
+  "v": 1
+}

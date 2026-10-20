@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "hooks": {
+    "SessionStart":       [{"type": "command", "command": "agent-autosave hook copilot SessionStart", "timeoutSec": 5}],
+    "UserPromptSubmit":   [{"type": "command", "command": "agent-autosave hook copilot UserPromptSubmit", "timeoutSec": 5}],
+    "PostToolUse":        [{"type": "command", "command": "agent-autosave hook copilot PostToolUse", "timeoutSec": 5}],
+    "PostToolUseFailure": [{"type": "command", "command": "agent-autosave hook copilot PostToolUseFailure", "timeoutSec": 5}],
+    "Stop":               [{"type": "command", "command": "agent-autosave hook copilot Stop", "timeoutSec": 5}],
+    "PreCompact":         [{"type": "command", "command": "agent-autosave hook copilot PreCompact", "timeoutSec": 5}],
+    "SessionEnd":         [{"type": "command", "command": "agent-autosave hook copilot SessionEnd", "timeoutSec": 5}]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "agent": "claude-code",
+  "agent_version": "2.1.291 (Claude Code)",
+  "payload": {
+    "cwd": "/private/tmp/aa-scratch",
+    "duration_ms": 670,
+    "effort": {
+      "level": "medium"
+    },
+    "hook_event_name": "PostToolUse",
+    "permission_mode": "auto",
+    "prompt_id": "c659193a-1411-46c5-b362-92f70421d674",
+    "scratchpad_dir": "/private/tmp/claude-501/-private-tmp-aa-scratch/5145dfc5-3aa4-4543-880d-5fabc745c93b/scratchpad",
+    "session_id": "5145dfc5-3aa4-4543-880d-5fabc745c93b",
+    "tool_input": {
+      "command": "python3 hello.py",
+      "description": "Run hello.py"
+    },
+    "tool_name": "Bash",
+    "tool_response": {
+      "interrupted": false,
+      "isImage": false,
+      "noOutputExpected": false,
+      "stderr": "",
+      "stdout": "hello autosave"
+    },
+    "tool_use_id": "toolu_01DhwJdUpCY8yHSbwW8B82DT",
+    "transcript_path": "~/.claude/projects/-private-tmp-aa-scratch/5145dfc5-3aa4-4543-880d-5fabc745c93b.jsonl"
+  },
+  "provenance": "Real hook stdin captured by agent-autosave record mode; secrets and home prefix redacted",
+  "recorded_at": "2026-10-15T01:59:40.613346Z",
+  "v": 1
+}

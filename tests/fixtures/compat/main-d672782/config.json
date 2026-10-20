@@ -1,0 +1,48 @@
+{
+  "budgets_ms": {
+    "git_call": 150
+  },
+  "capture": {
+    "ignore_paths": [
+      "node_modules/",
+      "dist/",
+      ".git/",
+      "__pycache__/",
+      "*.pyc",
+      ".DS_Store"
+    ],
+    "ignore_tools": [],
+    "output_tail_lines": 20,
+    "prompt_max_chars": 2000
+  },
+  "compile": {
+    "files": 30,
+    "last_actions": 10,
+    "save_md_max_chars": 8000,
+    "steering": 5
+  },
+  "history": {
+    "keep": 50
+  },
+  "inject": {
+    "max_chars": 1500,
+    "on_status": [
+      "interrupted",
+      "paused"
+    ],
+    "stale_after_hours": 24
+  },
+  "ledger": {
+    "rotate_mb": 5
+  },
+  "record": {
+    "agent_version": "",
+    "dir": "",
+    "enabled": false
+  },
+  "redact": {
+    "extra_patterns": [],
+    "redact_env_values": true
+  },
+  "v": 1
+}

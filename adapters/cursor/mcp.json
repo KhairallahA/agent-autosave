@@ -1,0 +1,1 @@
+{"mcpServers": {"agent-autosave": {"command": "agent-autosave", "args": ["mcp", "--project", "${workspaceFolder}"]}}}

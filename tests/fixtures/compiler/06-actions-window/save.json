@@ -1,0 +1,64 @@
+{
+  "agents": [
+    {
+      "agent": "claude-code",
+      "session": "session-a",
+      "transcript": null,
+      "turns": 15
+    }
+  ],
+  "checks": [],
+  "decisions": [],
+  "failing": null,
+  "files_edited": [],
+  "files_read": [],
+  "files_touched": [],
+  "git": null,
+  "goal": "Build a reliable portable autosave compiler.",
+  "handoffs": [],
+  "interrupted": null,
+  "last_actions": [
+    "Ran command 13 (exit 0)",
+    "Ran command 12 (exit 0)",
+    "Ran command 11 (exit 0)",
+    "Ran command 10 (exit 0)",
+    "Ran command 9 (exit 0)",
+    "Ran command 8 (exit 0)",
+    "Ran command 7 (exit 0)",
+    "Ran command 6 (exit 0)",
+    "Ran command 5 (exit 0)",
+    "Ran command 4 (exit 0)"
+  ],
+  "last_actions_shown": [
+    "Ran command 13 (exit 0)",
+    "Ran command 12 (exit 0)",
+    "Ran command 11 (exit 0)",
+    "Ran command 10 (exit 0)",
+    "Ran command 9 (exit 0)",
+    "Ran command 8 (exit 0)",
+    "Ran command 7 (exit 0)",
+    "Ran command 6 (exit 0)",
+    "Ran command 5 (exit 0)",
+    "Ran command 4 (exit 0)"
+  ],
+  "last_report": "",
+  "last_report_agent": null,
+  "last_report_at": null,
+  "last_session": {
+    "agent": "claude-code",
+    "ended": false,
+    "session": "session-a"
+  },
+  "latest_request": "",
+  "next_action": "Build a reliable portable autosave compiler.",
+  "started": "2026-10-14T12:00:00Z",
+  "status": "active",
+  "steering": [],
+  "stuck": null,
+  "summary": null,
+  "task_id": "t_20261014_120000000000",
+  "unknown_exit": [],
+  "updated": "2026-10-14T12:00:14Z",
+  "usage": {},
+  "v": 1
+}

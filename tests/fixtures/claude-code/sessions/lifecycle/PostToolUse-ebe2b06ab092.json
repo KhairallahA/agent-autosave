@@ -1,0 +1,34 @@
+{
+  "agent": "claude-code",
+  "agent_version": "2.1.291 (Claude Code)",
+  "payload": {
+    "cwd": "/private/tmp/aa-scratch",
+    "duration_ms": 17,
+    "effort": {
+      "level": "medium"
+    },
+    "hook_event_name": "PostToolUse",
+    "permission_mode": "auto",
+    "prompt_id": "44882a80-55b7-4efa-a4af-7aa440ef2607",
+    "scratchpad_dir": "/private/tmp/claude-501/-private-tmp-aa-scratch/5145dfc5-3aa4-4543-880d-5fabc745c93b/scratchpad",
+    "session_id": "5145dfc5-3aa4-4543-880d-5fabc745c93b",
+    "tool_input": {
+      "content": "print(\"hello autosave\")\n",
+      "file_path": "/private/tmp/aa-scratch/hello.py"
+    },
+    "tool_name": "Write",
+    "tool_response": {
+      "content": "print(\"hello autosave\")\n",
+      "filePath": "/private/tmp/aa-scratch/hello.py",
+      "originalFile": null,
+      "structuredPatch": [],
+      "type": "create",
+      "userModified": false
+    },
+    "tool_use_id": "toolu_01U856eX1xM77War4HeSeMKj",
+    "transcript_path": "~/.claude/projects/-private-tmp-aa-scratch/5145dfc5-3aa4-4543-880d-5fabc745c93b.jsonl"
+  },
+  "provenance": "Real hook stdin captured by agent-autosave record mode; secrets and home prefix redacted",
+  "recorded_at": "2026-10-15T01:58:45.740846Z",
+  "v": 1
+}

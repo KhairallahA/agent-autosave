@@ -1,0 +1,14 @@
+include README.md CHANGELOG.md CONTRIBUTING.md LICENSE NOTICE
+recursive-include adapters *.json *.md *.mdc
+recursive-include docs *.md
+recursive-include schemas *.json
+recursive-include scripts *.py *.sh
+recursive-include bench *.py *.md
+recursive-include tests *.py *.json *.jsonl *.md *.txt
+# Shipped in the sdist (as in the repository), never in the wheel.
+graft examples
+global-exclude __pycache__ *.py[cod]
+# The installers and the Homebrew formula, as in the repository.
+include install.sh install.ps1
+recursive-include Formula *.rb
+recursive-include packaging *.md

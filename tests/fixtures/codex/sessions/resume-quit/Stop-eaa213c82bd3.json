@@ -1,0 +1,18 @@
+{
+  "agent": "codex",
+  "agent_version": "codex-cli 0.162.1",
+  "payload": {
+    "cwd": "/private/tmp/aa-codex",
+    "hook_event_name": "Stop",
+    "last_assistant_message": "ok",
+    "model": "gpt-6-astra",
+    "permission_mode": "default",
+    "session_id": "01a13ff9-5e3e-7dc0-988c-0a7dbf39cae7",
+    "stop_hook_active": false,
+    "transcript_path": "~/.codex/sessions/2026/10/15/rollout-2026-10-15T17-31-14-01a13ff9-5e3e-7dc0-988c-0a7dbf39cae7.jsonl",
+    "turn_id": "01a13ffb-a4bb-75f2-a761-919205c99b43"
+  },
+  "provenance": "Real hook stdin captured by agent-autosave record mode; secrets redacted, home directory shown as ~",
+  "recorded_at": "2026-10-15T14:33:59.683301Z",
+  "v": 1
+}

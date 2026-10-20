@@ -1,0 +1,30 @@
+<!-- agent-autosave v:1 -->
+# agent-autosave — active task
+
+**Status:** active, 2026-10-14T12:00:04Z
+**Goal:** Build a reliable portable autosave compiler.
+**User steering:** None.
+
+## Where it stopped
+No tool actions recorded.
+
+## Failing
+No unresolved failing command.
+
+## Files and git
+Git state unavailable.
+Files: None recorded.
+
+## Decisions
+- Use local files
+- Keep runtime dependency free
+
+## Notes
+- warning: Temporary warning
+- todo: Deferred item
+
+## Next action
+Build a reliable portable autosave compiler.
+
+## Before you continue
+Run `git status` and confirm the files above match. If they don't, trust git over this save.

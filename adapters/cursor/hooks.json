@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "hooks": {
+    "sessionStart": [{"command": "agent-autosave hook cursor sessionStart", "timeout": 5}],
+    "beforeSubmitPrompt": [{"command": "agent-autosave hook cursor beforeSubmitPrompt", "timeout": 5}],
+    "postToolUse": [{"command": "agent-autosave hook cursor postToolUse", "matcher": "Shell", "timeout": 5}],
+    "afterFileEdit": [{"command": "agent-autosave hook cursor afterFileEdit", "timeout": 5}],
+    "preCompact": [{"command": "agent-autosave hook cursor preCompact", "timeout": 5}],
+    "stop": [{"command": "agent-autosave hook cursor stop", "timeout": 5}],
+    "sessionEnd": [{"command": "agent-autosave hook cursor sessionEnd", "timeout": 5}]
+  }
+}

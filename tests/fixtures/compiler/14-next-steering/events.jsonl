@@ -1,0 +1,2 @@
+{"agent": "claude-code", "kind": "prompt", "session": "session-a", "text": "Build a reliable portable autosave compiler.", "ts": "2026-10-14T12:00:00Z", "turn": 1, "v": 1}
+{"agent": "claude-code", "kind": "prompt", "session": "session-a", "text": "Keep the old public API compatible.", "ts": "2026-10-14T12:00:01Z", "turn": 2, "v": 1}

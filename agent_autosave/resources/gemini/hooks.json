@@ -1,0 +1,10 @@
+{
+  "hooks": {
+    "SessionStart": [{"matcher": "*", "hooks": [{"name": "agent-autosave", "type": "command", "command": "agent-autosave hook gemini SessionStart", "timeout": 5000}]}],
+    "BeforeAgent":  [{"matcher": "*", "hooks": [{"name": "agent-autosave", "type": "command", "command": "agent-autosave hook gemini BeforeAgent", "timeout": 5000}]}],
+    "AfterTool":    [{"matcher": "*", "hooks": [{"name": "agent-autosave", "type": "command", "command": "agent-autosave hook gemini AfterTool", "timeout": 5000}]}],
+    "AfterAgent":   [{"matcher": "*", "hooks": [{"name": "agent-autosave", "type": "command", "command": "agent-autosave hook gemini AfterAgent", "timeout": 5000}]}],
+    "PreCompress":  [{"matcher": "*", "hooks": [{"name": "agent-autosave", "type": "command", "command": "agent-autosave hook gemini PreCompress", "timeout": 5000}]}],
+    "SessionEnd":   [{"matcher": "*", "hooks": [{"name": "agent-autosave", "type": "command", "command": "agent-autosave hook gemini SessionEnd", "timeout": 5000}]}]
+  }
+}

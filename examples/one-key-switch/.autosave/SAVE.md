@@ -1,0 +1,50 @@
+<!-- agent-autosave v:1 -->
+# agent-autosave — paused task
+
+**Status:** paused, 2026-10-15T02:05:57.477033Z
+**Goal:** Use your todo/task tool to make a 3-step plan: write hello.py, run it, add a failing check. Then do step 1 only: write hello.py that prints "hello autosave".
+**Latest request:** What did the agent-autosave context at session start tell you?
+**User steering:**
+- Run python3 hello.py. Then run python3 -c "raise SystemExit(7)" and stop there; do not fix it.
+- What did the agent-autosave context at session start tell you?
+
+## Plan
+- [x] Write \`hello.py\`
+- [ ] Run it
+- [ ] Add a failing check
+
+## Where it stopped
+- Ran python3 -c "raise SystemExit(7)" (exit 7)
+- Ran python3 hello.py (exit 0)
+- Wrote hello.py
+
+## Failing
+`python3 -c "raise SystemExit(7)"` (exit 7)
+
+    Exit code 7
+
+## Files and git
+Git state unavailable.
+Files: hello.py.
+
+## Agent's last message
+    I wrote `hello.py`, which prints `hello autosave`. That finishes step 1. I haven't run it, because that's step 2.
+
+    What's left:
+    - [x] 1. Write `hello.py`
+    - [ ] 2. Run it
+    - [ ] 3. Add a failing check
+
+(claude-code, 2026-10-15T01:58:49.006784Z)
+
+## Decisions
+None recorded.
+
+## Notes
+- handoff: Step 1 is done: hello.py prints hello autosave. Next: run python3 hello.py, then the failing check python3 -c "raise SystemExit(7)". Nothing risky in flight.
+
+## Next action
+Make `python3 -c "raise SystemExit(7)"` pass.
+
+## Before you continue
+Run `git status` and confirm the files above match. If they don't, trust git over this save.

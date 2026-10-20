@@ -1,0 +1,23 @@
+{
+  "agent": "claude-code",
+  "agent_version": "2.1.291 (Claude Code)",
+  "payload": {
+    "background_tasks": [],
+    "cwd": "/private/tmp/aa-scratch",
+    "effort": {
+      "level": "medium"
+    },
+    "hook_event_name": "Stop",
+    "last_assistant_message": "Both commands ran:\n\n1. `python3 hello.py` printed `hello autosave`.\n2. `python3 -c \"raise SystemExit(7)\"` failed with **exit code 7**, as intended. I've stopped there and left it as is.\n\nProgress:\n- [x] 1. Write `hello.py`\n- [x] 2. Run it\n- [ ] 3. Add a failing check: the failing command above ran, but nothing in the repo records it as a check yet.",
+    "permission_mode": "auto",
+    "prompt_id": "c659193a-1411-46c5-b362-92f70421d674",
+    "scratchpad_dir": "/private/tmp/claude-501/-private-tmp-aa-scratch/5145dfc5-3aa4-4543-880d-5fabc745c93b/scratchpad",
+    "session_crons": [],
+    "session_id": "5145dfc5-3aa4-4543-880d-5fabc745c93b",
+    "stop_hook_active": false,
+    "transcript_path": "~/.claude/projects/-private-tmp-aa-scratch/5145dfc5-3aa4-4543-880d-5fabc745c93b.jsonl"
+  },
+  "provenance": "Real hook stdin captured by agent-autosave record mode; secrets and home prefix redacted",
+  "recorded_at": "2026-10-15T01:59:47.227681Z",
+  "v": 1
+}

@@ -1,0 +1,5 @@
+[1;36magent-autosave history[0m  [2m2 archived saves[0m
+
+  [2mTASK[0m               [2mSTATUS[0m  [2mAGENTS[0m             [2mPLAN[0m  [2mGOAL[0m
+  t_20261015_093000  [34mdone[0m    claude-code,codex  3/3   Migrate auth to OAuth2 and keep the session API unchanged
+  t_20261014_170512  [33mpaused[0m  codex              -     [2m(no goal)[0m

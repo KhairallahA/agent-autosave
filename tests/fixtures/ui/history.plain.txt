@@ -1,0 +1,5 @@
+agent-autosave history  2 archived saves
+
+  TASK               STATUS  AGENTS             PLAN  GOAL
+  t_20261015_093000  done    claude-code,codex  3/3   Migrate auth to OAuth2 and keep the session API unchanged
+  t_20261014_170512  paused  codex              -     (no goal)

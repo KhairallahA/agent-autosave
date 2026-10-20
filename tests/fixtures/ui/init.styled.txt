@@ -1,0 +1,17 @@
+[1;36magent-autosave init[0m
+
+  [32m+[0m [1mClaude Code 2.1.4[0m  8 hooks in .claude/settings.json
+  [32m+[0m [1mCLAUDE.md        [0m  agent-autosave block added
+  [32m+[0m [1mCodex 0.130.0    [0m  6 hooks in .codex/hooks.json
+  [32m+[0m [1mAGENTS.md        [0m  agent-autosave block added
+  [2m–[0m [1mCursor           [0m  [2mnot installed, skipped[0m
+  [2m–[0m [1mGemini CLI       [0m  [2mnot installed, skipped[0m
+  [2m–[0m [1mAntigravity      [0m  [2mnot installed, skipped[0m
+  [32m+[0m [1m.autosave/       [0m  created and added to .gitignore
+
+  [33m![0m In Codex, open /hooks and trust the 6 agent-autosave hooks.
+    Codex skips new hooks until you do.
+
+  [1;32mDone.[0m Your agents now autosave. Next:
+    [36magent-autosave status[0m[2m    the save on one screen[0m
+    [36magent-autosave doctor[0m[2m    check every hook is in place[0m

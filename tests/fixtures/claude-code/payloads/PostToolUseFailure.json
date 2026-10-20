@@ -1,0 +1,26 @@
+{
+  "claude_version": "2.1.291",
+  "payload": {
+    "cwd": "/private/tmp/agent-autosave-m2-audit-retry",
+    "duration_ms": 50,
+    "effort": {
+      "level": "medium"
+    },
+    "error": "Exit code 7",
+    "hook_event_name": "PostToolUseFailure",
+    "is_interrupt": false,
+    "permission_mode": "default",
+    "prompt_id": "1d7e540c-3a11-47cc-bcb0-e16a6256ff58",
+    "session_id": "c4e76590-bf89-4379-b56d-4d7db42857b1",
+    "tool_input": {
+      "command": "python3 -c \"raise SystemExit(7)\"",
+      "description": "Run a Python command that exits with code 7"
+    },
+    "tool_name": "Bash",
+    "tool_use_id": "toolu_011HYXMvuxgtxCh6PG16qtyo",
+    "transcript_path": "~/.claude/projects/-private-tmp-agent-autosave-m2-audit-retry/c4e76590-bf89-4379-b56d-4d7db42857b1.jsonl"
+  },
+  "provenance": "Claude Code hook stdin; secrets and home prefix redacted",
+  "recorded_at": "2026-10-14T18:53:31.623222Z",
+  "v": 1
+}

@@ -1,0 +1,20 @@
+{
+  "source": "doc-derived: cursor.com/docs/hooks (2026-10-15)",
+  "payload": {
+    "conversation_id": "c-1",
+    "generation_id": "g-1",
+    "model": "claude-4.5-sonnet",
+    "cursor_version": "2.4.21",
+    "workspace_roots": [
+      "/work/repo"
+    ],
+    "user_email": null,
+    "transcript_path": null,
+    "hook_event_name": "sessionEnd",
+    "session_id": "c-1",
+    "reason": "user_close",
+    "duration_ms": 45000,
+    "is_background_agent": false,
+    "final_status": "completed"
+  }
+}

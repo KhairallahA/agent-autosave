@@ -1,0 +1,5 @@
+{"agent": "claude-code", "kind": "prompt", "session": "session-a", "text": "Build a reliable portable autosave compiler.", "ts": "2026-10-14T12:00:00Z", "turn": 1, "v": 1}
+{"agent": "claude-code", "kind": "note", "session": "session-a", "text": "Use local files", "ts": "2026-10-14T12:00:01Z", "turn": 2, "type": "decision", "v": 1}
+{"agent": "claude-code", "kind": "note", "session": "session-a", "text": "Temporary warning", "ts": "2026-10-14T12:00:02Z", "turn": 3, "type": "warning", "v": 1}
+{"agent": "claude-code", "kind": "note", "session": "session-a", "text": "Deferred item", "ts": "2026-10-14T12:00:03Z", "turn": 4, "type": "todo", "v": 1}
+{"agent": "claude-code", "kind": "note", "session": "session-a", "text": "Keep runtime dependency free", "ts": "2026-10-14T12:00:04Z", "turn": 5, "type": "decision", "v": 1}

@@ -1,0 +1,10 @@
+[1;36magent-autosave status[0m  [2mupdated 2026-10-15 09:30 UTC[0m
+  [33m![0m [33mThis save may be stale: 2 commits landed since.[0m
+
+  [2mStatus  [0m  [1;31minterrupted[0m[2m (rate_limit in Claude Code at 2026-10-15 09:29 UTC)[0m
+  [2mGoal    [0m  Migrate auth to OAuth2
+  [2mPlan    [0m  1 of 3 done
+  [2mNext    [0m  [1mFinish the token refresh in src/auth.ts[0m
+  [2mHandoffs[0m  [2mnone[0m
+
+[2m  Full save: [0m[36magent-autosave show[0m[2m   Continue in another agent: [0m[36magent-autosave resume <agent>[0m

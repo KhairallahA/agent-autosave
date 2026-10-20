@@ -1,0 +1,3 @@
+[mcp_servers.agent-autosave]
+command = "agent-autosave"
+args = ["mcp"]

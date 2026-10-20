@@ -1,0 +1,560 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "agent-autosave save v1",
+  "description": "The compiled save (.autosave/save.json). Written with sorted keys; a reader must ignore fields it does not know, but this schema describes exactly what version 1 writes.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "agents",
+    "decisions",
+    "failing",
+    "files_touched",
+    "git",
+    "goal",
+    "handoffs",
+    "interrupted",
+    "last_actions",
+    "last_session",
+    "next_action",
+    "started",
+    "status",
+    "steering",
+    "task_id",
+    "unknown_exit",
+    "updated",
+    "v"
+  ],
+  "properties": {
+    "v": {
+      "type": "integer",
+      "const": 1
+    },
+    "task_id": {
+      "type": "string",
+      "pattern": "^t_[0-9]+_[0-9]+(_[0-9]+)?$"
+    },
+    "started": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?Z$"
+    },
+    "updated": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?Z$"
+    },
+    "status": {
+      "enum": [
+        "active",
+        "interrupted",
+        "paused",
+        "done"
+      ]
+    },
+    "goal": {
+      "type": "string"
+    },
+    "steering": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "plan": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "state",
+          "step"
+        ],
+        "properties": {
+          "step": {
+            "type": "string",
+            "minLength": 1
+          },
+          "state": {
+            "enum": [
+              "todo",
+              "doing",
+              "done"
+            ]
+          }
+        }
+      },
+      "description": "Present once a plan was recorded."
+    },
+    "last_actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "last_actions_shown": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "last_actions for display: project root relative, temp paths as <tmp>, at most 100 characters cut at a word boundary."
+    },
+    "failing": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "command",
+            "exit",
+            "tail"
+          ],
+          "properties": {
+            "command": {
+              "type": "string",
+              "minLength": 1
+            },
+            "exit": {
+              "type": "integer"
+            },
+            "tail": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "unknown_exit": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "files_edited": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "files_touched": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "git": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [],
+          "properties": {
+            "branch": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "head": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "commits_since_start": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "minimum": 0
+            },
+            "diffstat": {
+              "type": "string"
+            },
+            "dirty": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "untracked": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "decisions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "text",
+          "type"
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "minLength": 1
+          },
+          "text": {
+            "type": "string"
+          }
+        }
+      },
+      "description": "Present once a note other than a decision was recorded."
+    },
+    "agents": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "agent",
+          "session",
+          "transcript",
+          "turns"
+        ],
+        "properties": {
+          "agent": {
+            "type": "string",
+            "minLength": 1
+          },
+          "session": {
+            "type": "string",
+            "minLength": 1
+          },
+          "transcript": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "turns": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "last_session": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "agent",
+            "ended",
+            "session"
+          ],
+          "properties": {
+            "agent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "session": {
+              "type": "string",
+              "minLength": 1
+            },
+            "ended": {
+              "type": "boolean"
+            }
+          }
+        }
+      ]
+    },
+    "handoffs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "at",
+          "from",
+          "reason",
+          "to"
+        ],
+        "properties": {
+          "from": {
+            "type": "string",
+            "minLength": 1
+          },
+          "to": {
+            "type": "string",
+            "minLength": 1
+          },
+          "at": {
+            "type": "string",
+            "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?Z$"
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "interrupted": {
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "agent",
+            "at",
+            "reason"
+          ],
+          "properties": {
+            "reason": {
+              "enum": [
+                "rate_limit",
+                "overloaded",
+                "auth",
+                "server_error",
+                "unknown",
+                "compact"
+              ]
+            },
+            "agent": {
+              "type": "string",
+              "minLength": 1
+            },
+            "at": {
+              "type": "string",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?Z$"
+            }
+          }
+        }
+      ]
+    },
+    "next_action": {
+      "type": "string"
+    },
+    "latest_request": {
+      "type": "string",
+      "description": "The newest steering prompt (the last thing the user asked for), empty when there is none."
+    },
+    "last_report": {
+      "type": "string",
+      "description": "The newest non-empty final message of an agent turn, redacted, whitespace collapsed, at most 600 characters."
+    },
+    "last_report_agent": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "last_report_at": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "date-time"
+    },
+    "files_read": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Project-relative files read-only tools looked at, newest first, unique, at most 10."
+    },
+    "checks": {
+      "type": "array",
+      "description": "Newest run of each recognised check (tests, lint, type checks), failing first, at most 6.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "command",
+          "exit",
+          "at"
+        ],
+        "properties": {
+          "command": {
+            "type": "string"
+          },
+          "exit": {
+            "type": "integer"
+          },
+          "at": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    "stuck": {
+      "description": "The same command failed at least 3 times in a row with no pass; null otherwise.",
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "command",
+            "failures",
+            "since",
+            "edits_between"
+          ],
+          "properties": {
+            "command": {
+              "type": "string"
+            },
+            "failures": {
+              "type": "integer",
+              "minimum": 3
+            },
+            "since": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "edits_between": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        }
+      ]
+    },
+    "usage": {
+      "type": "object",
+      "description": "Newest usage reading per agent (Codex rate limits and context window). crossed_at: when the limit reached handoff.warn_at_percent in this window; handoff_at: the newest handoff note since then.",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "session",
+          "at"
+        ],
+        "properties": {
+          "session": {
+            "type": "string"
+          },
+          "at": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "limit_pct": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "limit_window_minutes": {
+            "type": [
+              "integer",
+              "null"
+            ]
+          },
+          "limit_resets_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "weekly_pct": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "context_pct": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "crossed_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "handoff_at": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    "summary": {
+      "description": "The newest summary an agent wrote when it compacted its context; null when none was recorded.",
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "text",
+            "agent",
+            "at"
+          ],
+          "properties": {
+            "text": {
+              "type": "string"
+            },
+            "agent": {
+              "type": "string"
+            },
+            "at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "trigger": {
+              "type": ["string", "null"]
+            },
+            "pre_tokens": {
+              "type": ["integer", "null"]
+            },
+            "post_tokens": {
+              "type": ["integer", "null"]
+            }
+          }
+        }
+      ]
+    },
+    "memory_notes": {
+      "description": "Decision, tried and warning notes with who wrote them; proposed as memory candidates when the task is archived. Absent when there are none.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["type", "text", "agent", "at"],
+        "properties": {
+          "type": {"enum": ["decision", "tried", "warning"]},
+          "text": {"type": "string"},
+          "agent": {"type": "string"},
+          "at": {"type": "string", "format": "date-time"}
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "v": 1,
+  "recorded_at": "2026-10-15T00:00:00Z",
+  "agent": "codex",
+  "agent_version": "doc-derived",
+  "doc_derived": true,
+  "provenance": "DOC-DERIVED, NOT A RECORDING: built from developers.openai.com/codex/hooks (2026-10-15) and the codex-rs hook schemas; replace with a real recording (scripts/e2e-codex.md)",
+  "payload": {
+    "session_id": "019a0000-0000-7000-8000-000000000001",
+    "transcript_path": "~/.codex/sessions/2026/10/15/rollout-2026-10-15T10-00-00-019a0000-0000-7000-8000-000000000001.jsonl",
+    "cwd": "/tmp/aa-codex",
+    "model": "gpt-5.5",
+    "hook_event_name": "SessionStart",
+    "source": "fork",
+    "permission_mode": "default"
+  }
+}

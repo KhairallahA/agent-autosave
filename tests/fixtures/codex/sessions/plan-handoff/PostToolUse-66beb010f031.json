@@ -1,0 +1,22 @@
+{
+  "agent": "codex",
+  "agent_version": "codex-cli 0.162.1",
+  "payload": {
+    "cwd": "/private/tmp/aa-codex",
+    "hook_event_name": "PostToolUse",
+    "model": "gpt-6-astra",
+    "permission_mode": "default",
+    "session_id": "01a13fcf-cfdf-7582-8790-29210a9b34f3",
+    "tool_input": {
+      "command": "python3 -c \"raise SystemExit(7)\""
+    },
+    "tool_name": "Bash",
+    "tool_response": "",
+    "tool_use_id": "exec-9d933074-6bf7-4d46-b4e6-1fb1d5f5db14",
+    "transcript_path": "~/.codex/sessions/2026/10/15/rollout-2026-10-15T16-45-46-01a13fcf-cfdf-7582-8790-29210a9b34f3.jsonl",
+    "turn_id": "01a13fd1-e486-7ae1-95c9-6b8ae7e31eb1"
+  },
+  "provenance": "Real hook stdin captured by agent-autosave record mode; secrets redacted, home directory shown as ~",
+  "recorded_at": "2026-10-15T13:48:26.122060Z",
+  "v": 1
+}

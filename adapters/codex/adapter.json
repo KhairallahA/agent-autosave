@@ -1,0 +1,9 @@
+{
+  "name": "codex",
+  "description": "Codex: hooks in .codex/hooks.json (trusted projects) or ~/.codex/hooks.json; save injected at SessionStart; rate limit read from the rollout tail at Stop and SessionEnd.",
+  "files": [
+    {"src": "hooks.json", "dst": ".codex/hooks.json", "user_dst": "hooks.json", "merge_policy": "merge_json"},
+    {"src": "AGENTS.block.md", "dst": "AGENTS.md", "merge_policy": "managed_block"},
+    {"src": "config.block.toml", "dst": ".codex/config.toml", "merge_policy": "managed_block", "feature": "mcp"}
+  ]
+}

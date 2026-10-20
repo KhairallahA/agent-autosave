@@ -1,0 +1,4 @@
+agent-autosave init
+
+  = Already set up here; nothing changed.
+    hint: To change agents or preferences: agent-autosave init --reconfigure

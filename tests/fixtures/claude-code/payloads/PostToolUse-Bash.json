@@ -1,0 +1,31 @@
+{
+  "claude_version": "2.1.291",
+  "payload": {
+    "cwd": "/private/tmp/agent-autosave-m2-audit-retry",
+    "duration_ms": 605,
+    "effort": {
+      "level": "medium"
+    },
+    "hook_event_name": "PostToolUse",
+    "permission_mode": "default",
+    "prompt_id": "1d7e540c-3a11-47cc-bcb0-e16a6256ff58",
+    "session_id": "c4e76590-bf89-4379-b56d-4d7db42857b1",
+    "tool_input": {
+      "command": "python3 hello.py",
+      "description": "Run hello.py"
+    },
+    "tool_name": "Bash",
+    "tool_response": {
+      "interrupted": false,
+      "isImage": false,
+      "noOutputExpected": false,
+      "stderr": "",
+      "stdout": "hello autosave"
+    },
+    "tool_use_id": "toolu_01C7m5RNWgZcGAZxwTwHUCAv",
+    "transcript_path": "~/.claude/projects/-private-tmp-agent-autosave-m2-audit-retry/c4e76590-bf89-4379-b56d-4d7db42857b1.jsonl"
+  },
+  "provenance": "Claude Code hook stdin; secrets and home prefix redacted",
+  "recorded_at": "2026-10-14T18:53:21.378678Z",
+  "v": 1
+}

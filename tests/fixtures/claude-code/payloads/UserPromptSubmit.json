@@ -1,0 +1,15 @@
+{
+  "claude_version": "2.1.291",
+  "payload": {
+    "cwd": "/private/tmp/agent-autosave-m2-audit-retry",
+    "hook_event_name": "UserPromptSubmit",
+    "permission_mode": "default",
+    "prompt": "Reply OK. This scratch request records an authentication failure using a deliberately invalid test credential.",
+    "prompt_id": "ec80403b-e620-4078-9598-a6b33683e970",
+    "session_id": "6feb6955-b423-44d2-ba9e-e6990940ab74",
+    "transcript_path": "~/.claude/projects/-private-tmp-agent-autosave-m2-audit-retry/6feb6955-b423-44d2-ba9e-e6990940ab74.jsonl"
+  },
+  "provenance": "Claude Code hook stdin; secrets and home prefix redacted",
+  "recorded_at": "2026-10-14T18:54:59.139781Z",
+  "v": 1
+}

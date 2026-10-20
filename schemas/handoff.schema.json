@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "agent-autosave handoff file frontmatter v1",
+  "description": "The frontmatter of .autosave-handoff.md (written by handoff export): YAML whose values are JSON. The body is SAVE.md, then the task's ledger events in a jsonl block after the <!-- agent-autosave:events --> marker.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["agent-autosave-handoff", "task_id", "branch", "status", "goal", "exported"],
+  "properties": {
+    "agent-autosave-handoff": {"type": "integer", "const": 1},
+    "task_id": {"type": "string", "pattern": "^t_[0-9]+_[0-9]+(_[0-9]+)?$"},
+    "branch": {"type": "string"},
+    "status": {"enum": ["active", "paused", "interrupted", "done"]},
+    "goal": {"type": "string"},
+    "exported": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?Z$"}
+  }
+}

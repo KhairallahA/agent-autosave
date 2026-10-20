@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "agent-autosave memory candidate v1",
+  "description": "One line of .autosave/memory/candidates.jsonl: a note proposed for MEMORY.md and what a person decided.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["v", "id", "type", "text", "source", "created", "status"],
+  "properties": {
+    "v": {"type": "integer", "const": 1},
+    "id": {"type": "string", "pattern": "^c-[0-9a-z]{1,32}$"},
+    "type": {"enum": ["decision", "tried", "gotcha", "convention"]},
+    "text": {"type": "string", "minLength": 1},
+    "source": {"type": "object", "required": ["agent", "task_id"], "properties": {"agent": {"type": "string"}, "task_id": {"type": ["string", "null"]}}},
+    "created": {"type": "string", "format": "date-time", "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?Z$"},
+    "status": {"enum": ["pending", "accepted", "rejected"]},
+    "until": {"type": "string"},
+    "replaces": {"type": "string"},
+    "entry": {"type": "string", "pattern": "^m-[0-9a-z]{1,32}$", "description": "The MEMORY.md entry an accepted candidate became."},
+    "reason": {"type": "string", "description": "Why it was rejected, when a reason was given."}
+  }
+}

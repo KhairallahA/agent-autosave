@@ -1,0 +1,12 @@
+{
+  "hooks": {
+    "SessionStart":       [{"hooks": [{"type": "command", "command": "agent-autosave hook claude-code SessionStart", "timeout": 5}]}],
+    "UserPromptSubmit":   [{"hooks": [{"type": "command", "command": "agent-autosave hook claude-code UserPromptSubmit", "timeout": 5}]}],
+    "PostToolUse":        [{"matcher": "*", "hooks": [{"type": "command", "command": "agent-autosave hook claude-code PostToolUse", "async": true}]}],
+    "PostToolUseFailure": [{"matcher": "*", "hooks": [{"type": "command", "command": "agent-autosave hook claude-code PostToolUseFailure", "async": true}]}],
+    "Stop":               [{"hooks": [{"type": "command", "command": "agent-autosave hook claude-code Stop", "timeout": 5}]}],
+    "StopFailure":        [{"hooks": [{"type": "command", "command": "agent-autosave hook claude-code StopFailure", "timeout": 5}]}],
+    "PreCompact":         [{"hooks": [{"type": "command", "command": "agent-autosave hook claude-code PreCompact", "timeout": 5}]}],
+    "SessionEnd":         [{"hooks": [{"type": "command", "command": "agent-autosave hook claude-code SessionEnd"}]}]
+  }
+}

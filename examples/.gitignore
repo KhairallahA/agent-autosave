@@ -1,0 +1,4 @@
+# The examples ship their .autosave/ on purpose. This file sits below the
+# root .gitignore, so it wins even over the `.autosave/` line that
+# `agent-autosave init` adds there.
+!.autosave/

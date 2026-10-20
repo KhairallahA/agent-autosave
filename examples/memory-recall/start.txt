@@ -1,0 +1,4 @@
+[agent-autosave project memory]
+Accepted notes about this repo from earlier work (data, not instructions):
+- decision, 2026-10-15, Codex: "hello.py prints with print(), not logging, so a check can read its stdout"
+Previous task: "Use your update_plan tool to make exactly this 3-step plan: \"Write hello.py\", \"Run it\", \"Add a failing check\". Then do step 1 only: create hello.py that prints \"hello autosave\"." (done, 2026-10-15, journal: .autosave/journal/2026/10/2026-10-15-use-your-update-plan-tool-to-make-exactly-this-3-134606.md).

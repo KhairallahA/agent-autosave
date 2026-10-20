@@ -1,0 +1,9 @@
+{
+  "name": "gemini",
+  "description": "Gemini CLI: hooks in .gemini/settings.json (from the docs, not yet recorded); save injected at SessionStart; GEMINI.md block. Resume: gemini --prompt-interactive.",
+  "files": [
+    {"src": "hooks.json", "dst": ".gemini/settings.json", "merge_policy": "merge_json"},
+    {"src": "GEMINI.block.md", "dst": "GEMINI.md", "merge_policy": "managed_block"},
+    {"src": "mcp.json", "dst": ".gemini/settings.json", "merge_policy": "merge_json", "feature": "mcp"}
+  ]
+}

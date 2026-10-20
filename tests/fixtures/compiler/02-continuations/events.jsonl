@@ -1,0 +1,5 @@
+{"agent": "claude-code", "kind": "prompt", "session": "session-a", "text": "yes", "ts": "2026-10-14T12:00:00Z", "turn": 1, "v": 1}
+{"agent": "claude-code", "kind": "prompt", "session": "session-a", "text": "continue", "ts": "2026-10-14T12:00:01Z", "turn": 2, "v": 1}
+{"agent": "claude-code", "kind": "prompt", "session": "session-a", "text": "xxxxxxxxxxxxxxxxxxx", "ts": "2026-10-14T12:00:02Z", "turn": 3, "v": 1}
+{"agent": "claude-code", "kind": "prompt", "session": "session-a", "text": "xxxxxxxxxxxxxxxxxxxx", "ts": "2026-10-14T12:00:03Z", "turn": 4, "v": 1}
+{"agent": "claude-code", "kind": "prompt", "session": "session-a", "text": "ok", "ts": "2026-10-14T12:00:04Z", "turn": 5, "v": 1}

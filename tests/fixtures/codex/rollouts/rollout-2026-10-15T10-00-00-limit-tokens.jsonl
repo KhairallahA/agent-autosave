@@ -1,0 +1,5 @@
+{"timestamp": "2026-10-15T10:00:05.000Z", "type": "session_meta", "payload": {"id": "019a0000-0000-7000-8000-000000000001", "cwd": "/tmp/aa-codex", "originator": "codex_cli_rs", "cli_version": "doc-derived"}}
+{"timestamp": "2026-10-15T10:00:05.000Z", "type": "event_msg", "payload": {"type": "task_started", "turn_id": "turn-2"}}
+{"timestamp": "2026-10-15T10:00:05.000Z", "type": "response_item", "payload": {"type": "function_call", "name": "exec_command", "call_id": "call_ok", "arguments": "{\"cmd\":\"python3 hello.py\"}"}}
+{"timestamp": "2026-10-15T10:00:05.000Z", "type": "response_item", "payload": {"type": "function_call_output", "call_id": "call_ok", "output": "Chunk ID: a1\nWall time: 0.0400 seconds\nProcess exited with code 0\nOriginal token count: 3\nOutput:\nhello autosave\n"}}
+{"timestamp": "2026-10-15T10:00:05.000Z", "type": "event_msg", "payload": {"type": "token_count", "info": null, "rate_limits": {"limit_id": "codex", "primary": {"used_percent": 100.0, "window_minutes": 300, "resets_at": 1792000000}, "secondary": null, "rate_limit_reached_type": "rate_limit_reached"}}}

@@ -1,0 +1,56 @@
+{
+  "agents": [
+    {
+      "agent": "claude-code",
+      "session": "session-a",
+      "transcript": null,
+      "turns": 2
+    }
+  ],
+  "checks": [
+    {
+      "at": "2026-10-14T12:00:01Z",
+      "command": "pytest",
+      "exit": 2
+    }
+  ],
+  "decisions": [],
+  "failing": {
+    "command": "pytest",
+    "exit": 2,
+    "tail": "failure 5\nfailure 6\nfailure 7\nfailure 8\nfailure 9\nfailure 10\nfailure 11\nfailure 12\nfailure 13\nfailure 14\nfailure 15\nfailure 16\nfailure 17\nfailure 18\nfailure 19\nfailure 20\nfailure 21\nfailure 22\nfailure 23\nfailure 24"
+  },
+  "files_edited": [],
+  "files_read": [],
+  "files_touched": [],
+  "git": null,
+  "goal": "Build a reliable portable autosave compiler.",
+  "handoffs": [],
+  "interrupted": null,
+  "last_actions": [
+    "Ran pytest (exit 2)"
+  ],
+  "last_actions_shown": [
+    "Ran pytest (exit 2)"
+  ],
+  "last_report": "",
+  "last_report_agent": null,
+  "last_report_at": null,
+  "last_session": {
+    "agent": "claude-code",
+    "ended": false,
+    "session": "session-a"
+  },
+  "latest_request": "",
+  "next_action": "Make `pytest` pass.",
+  "started": "2026-10-14T12:00:00Z",
+  "status": "active",
+  "steering": [],
+  "stuck": null,
+  "summary": null,
+  "task_id": "t_20261014_120000000000",
+  "unknown_exit": [],
+  "updated": "2026-10-14T12:00:01Z",
+  "usage": {},
+  "v": 1
+}

@@ -1,0 +1,7 @@
+{
+  "name": "generic",
+  "description": "Any agent that reads AGENTS.md: an instruction block only (no hooks). Shares the AGENTS.md block with Codex.",
+  "files": [
+    {"src": "AGENTS.block.md", "dst": "AGENTS.md", "merge_policy": "managed_block"}
+  ]
+}

@@ -1,0 +1,858 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "agent-autosave normalized event v1",
+  "description": "Agent-independent input event. Capture redacts and limits text before persistence; task_id is assigned by TaskStore.",
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "v",
+        "ts",
+        "agent",
+        "session",
+        "turn",
+        "kind",
+        "source"
+      ],
+      "properties": {
+        "v": {
+          "type": "integer",
+          "const": 1
+        },
+        "ts": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?Z$"
+        },
+        "agent": {
+          "type": "string",
+          "minLength": 1
+        },
+        "session": {
+          "type": "string",
+          "minLength": 1
+        },
+        "turn": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "kind": {
+          "const": "session_start"
+        },
+        "task_id": {
+          "type": "string",
+          "pattern": "^t_[0-9]+_[0-9]+(_[0-9]+)?$"
+        },
+        "source": {
+          "enum": [
+            "startup",
+            "resume",
+            "clear",
+            "compact"
+          ]
+        },
+        "model": {
+          "type": "string"
+        },
+        "transcript": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string",
+          "description": "The agent's own identifier for this event (tool_use_id, prompt_id, turn_id, generation_id); a repeat with the same agent, session, kind and id is skipped."
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "v",
+        "ts",
+        "agent",
+        "session",
+        "turn",
+        "kind",
+        "text"
+      ],
+      "properties": {
+        "v": {
+          "type": "integer",
+          "const": 1
+        },
+        "ts": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?Z$"
+        },
+        "agent": {
+          "type": "string",
+          "minLength": 1
+        },
+        "session": {
+          "type": "string",
+          "minLength": 1
+        },
+        "turn": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "kind": {
+          "const": "prompt"
+        },
+        "task_id": {
+          "type": "string",
+          "pattern": "^t_[0-9]+_[0-9]+(_[0-9]+)?$"
+        },
+        "text": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string",
+          "description": "The agent's own identifier for this event (tool_use_id, prompt_id, turn_id, generation_id); a repeat with the same agent, session, kind and id is skipped."
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "v",
+        "ts",
+        "agent",
+        "session",
+        "turn",
+        "kind",
+        "tool",
+        "summary",
+        "files"
+      ],
+      "properties": {
+        "v": {
+          "type": "integer",
+          "const": 1
+        },
+        "ts": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?Z$"
+        },
+        "agent": {
+          "type": "string",
+          "minLength": 1
+        },
+        "session": {
+          "type": "string",
+          "minLength": 1
+        },
+        "turn": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "kind": {
+          "const": "tool"
+        },
+        "task_id": {
+          "type": "string",
+          "pattern": "^t_[0-9]+_[0-9]+(_[0-9]+)?$"
+        },
+        "tool": {
+          "type": "string"
+        },
+        "summary": {
+          "type": "string"
+        },
+        "files": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "exit": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "description": "Shell exit code; null when the agent did not report it (unknown, neither pass nor failure)"
+        },
+        "output_tail": {
+          "type": "string"
+        },
+        "readonly": {
+          "type": "boolean",
+          "description": "The tool only read (Read, Grep, ...): never a last action; its files are looked at."
+        },
+        "id": {
+          "type": "string",
+          "description": "The agent's own identifier for this event (tool_use_id, prompt_id, turn_id, generation_id); a repeat with the same agent, session, kind and id is skipped."
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "v",
+        "ts",
+        "agent",
+        "session",
+        "turn",
+        "kind",
+        "items"
+      ],
+      "properties": {
+        "v": {
+          "type": "integer",
+          "const": 1
+        },
+        "ts": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?Z$"
+        },
+        "agent": {
+          "type": "string",
+          "minLength": 1
+        },
+        "session": {
+          "type": "string",
+          "minLength": 1
+        },
+        "turn": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "kind": {
+          "const": "plan"
+        },
+        "task_id": {
+          "type": "string",
+          "pattern": "^t_[0-9]+_[0-9]+(_[0-9]+)?$"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "step",
+              "state"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "step": {
+                "type": "string",
+                "minLength": 1,
+                "pattern": "\\S"
+              },
+              "state": {
+                "enum": [
+                  "todo",
+                  "doing",
+                  "done"
+                ]
+              }
+            }
+          }
+        },
+        "origin": {
+          "enum": [
+            "tool",
+            "message"
+          ]
+        },
+        "id": {
+          "type": "string",
+          "description": "The agent's own identifier for this event (tool_use_id, prompt_id, turn_id, generation_id); a repeat with the same agent, session, kind and id is skipped."
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "v",
+        "ts",
+        "agent",
+        "session",
+        "turn",
+        "kind",
+        "steps"
+      ],
+      "properties": {
+        "v": {
+          "type": "integer",
+          "const": 1
+        },
+        "ts": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?Z$"
+        },
+        "agent": {
+          "type": "string",
+          "minLength": 1
+        },
+        "session": {
+          "type": "string",
+          "minLength": 1
+        },
+        "turn": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "kind": {
+          "const": "plan_set"
+        },
+        "task_id": {
+          "type": "string",
+          "pattern": "^t_[0-9]+_[0-9]+(_[0-9]+)?$"
+        },
+        "steps": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "pattern": "\\S"
+          }
+        },
+        "id": {
+          "type": "string",
+          "description": "The agent's own identifier for this event (tool_use_id, prompt_id, turn_id, generation_id); a repeat with the same agent, session, kind and id is skipped."
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "v",
+        "ts",
+        "agent",
+        "session",
+        "turn",
+        "kind",
+        "index"
+      ],
+      "properties": {
+        "v": {
+          "type": "integer",
+          "const": 1
+        },
+        "ts": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?Z$"
+        },
+        "agent": {
+          "type": "string",
+          "minLength": 1
+        },
+        "session": {
+          "type": "string",
+          "minLength": 1
+        },
+        "turn": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "kind": {
+          "const": "plan_done"
+        },
+        "task_id": {
+          "type": "string",
+          "pattern": "^t_[0-9]+_[0-9]+(_[0-9]+)?$"
+        },
+        "index": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "id": {
+          "type": "string",
+          "description": "The agent's own identifier for this event (tool_use_id, prompt_id, turn_id, generation_id); a repeat with the same agent, session, kind and id is skipped."
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "v",
+        "ts",
+        "agent",
+        "session",
+        "turn",
+        "kind",
+        "trigger"
+      ],
+      "properties": {
+        "v": {
+          "type": "integer",
+          "const": 1
+        },
+        "ts": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?Z$"
+        },
+        "agent": {
+          "type": "string",
+          "minLength": 1
+        },
+        "session": {
+          "type": "string",
+          "minLength": 1
+        },
+        "turn": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "kind": {
+          "const": "compact"
+        },
+        "task_id": {
+          "type": "string",
+          "pattern": "^t_[0-9]+_[0-9]+(_[0-9]+)?$"
+        },
+        "trigger": {
+          "enum": [
+            "manual",
+            "auto"
+          ]
+        },
+        "id": {
+          "type": "string",
+          "description": "The agent's own identifier for this event (tool_use_id, prompt_id, turn_id, generation_id); a repeat with the same agent, session, kind and id is skipped."
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "v",
+        "ts",
+        "agent",
+        "session",
+        "turn",
+        "kind",
+        "reason"
+      ],
+      "properties": {
+        "v": {
+          "type": "integer",
+          "const": 1
+        },
+        "ts": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?Z$"
+        },
+        "agent": {
+          "type": "string",
+          "minLength": 1
+        },
+        "session": {
+          "type": "string",
+          "minLength": 1
+        },
+        "turn": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "kind": {
+          "const": "interrupted"
+        },
+        "task_id": {
+          "type": "string",
+          "pattern": "^t_[0-9]+_[0-9]+(_[0-9]+)?$"
+        },
+        "reason": {
+          "enum": [
+            "rate_limit",
+            "overloaded",
+            "auth",
+            "server_error",
+            "unknown"
+          ]
+        },
+        "id": {
+          "type": "string",
+          "description": "The agent's own identifier for this event (tool_use_id, prompt_id, turn_id, generation_id); a repeat with the same agent, session, kind and id is skipped."
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "v",
+        "ts",
+        "agent",
+        "session",
+        "turn",
+        "kind",
+        "text",
+        "type"
+      ],
+      "properties": {
+        "v": {
+          "type": "integer",
+          "const": 1
+        },
+        "ts": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?Z$"
+        },
+        "agent": {
+          "type": "string",
+          "minLength": 1
+        },
+        "session": {
+          "type": "string",
+          "minLength": 1
+        },
+        "turn": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "kind": {
+          "const": "note"
+        },
+        "task_id": {
+          "type": "string",
+          "pattern": "^t_[0-9]+_[0-9]+(_[0-9]+)?$"
+        },
+        "text": {
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "decision",
+            "todo",
+            "warning",
+            "handoff",
+            "tried"
+          ]
+        },
+        "by": {
+          "description": "Who ran the note command: an agent whose own tool-call marker was set, else you.",
+          "enum": [
+            "you",
+            "claude-code",
+            "codex",
+            "cursor",
+            "gemini",
+            "antigravity",
+            "copilot",
+            "opencode"
+          ]
+        },
+        "id": {
+          "type": "string",
+          "description": "The agent's own identifier for this event (tool_use_id, prompt_id, turn_id, generation_id); a repeat with the same agent, session, kind and id is skipped."
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "v",
+        "ts",
+        "agent",
+        "session",
+        "turn",
+        "kind",
+        "reason"
+      ],
+      "properties": {
+        "v": {
+          "type": "integer",
+          "const": 1
+        },
+        "ts": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?Z$"
+        },
+        "agent": {
+          "type": "string",
+          "minLength": 1
+        },
+        "session": {
+          "type": "string",
+          "minLength": 1
+        },
+        "turn": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "kind": {
+          "const": "session_end"
+        },
+        "task_id": {
+          "type": "string",
+          "pattern": "^t_[0-9]+_[0-9]+(_[0-9]+)?$"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string",
+          "description": "The agent's own identifier for this event (tool_use_id, prompt_id, turn_id, generation_id); a repeat with the same agent, session, kind and id is skipped."
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "v",
+        "ts",
+        "agent",
+        "session",
+        "turn",
+        "kind"
+      ],
+      "properties": {
+        "v": {
+          "type": "integer",
+          "const": 1
+        },
+        "ts": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?Z$"
+        },
+        "agent": {
+          "type": "string",
+          "minLength": 1
+        },
+        "session": {
+          "type": "string",
+          "minLength": 1
+        },
+        "turn": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "kind": {
+          "const": "turn_end"
+        },
+        "task_id": {
+          "type": "string",
+          "pattern": "^t_[0-9]+_[0-9]+(_[0-9]+)?$"
+        },
+        "last_message": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string",
+          "description": "The agent's own identifier for this event (tool_use_id, prompt_id, turn_id, generation_id); a repeat with the same agent, session, kind and id is skipped."
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "v",
+        "ts",
+        "agent",
+        "session",
+        "turn",
+        "kind"
+      ],
+      "properties": {
+        "v": {
+          "type": "integer",
+          "const": 1
+        },
+        "ts": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?Z$"
+        },
+        "agent": {
+          "type": "string",
+          "minLength": 1
+        },
+        "session": {
+          "type": "string",
+          "minLength": 1
+        },
+        "turn": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "task_id": {
+          "type": "string",
+          "pattern": "^t_[0-9]+_[0-9]+(_[0-9]+)?$"
+        },
+        "kind": {
+          "const": "task_done"
+        },
+        "note": {
+          "type": "string"
+        },
+        "id": {
+          "type": "string",
+          "description": "The agent's own identifier for this event (tool_use_id, prompt_id, turn_id, generation_id); a repeat with the same agent, session, kind and id is skipped."
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "v",
+        "ts",
+        "agent",
+        "session",
+        "turn",
+        "kind"
+      ],
+      "properties": {
+        "v": {
+          "type": "integer",
+          "const": 1
+        },
+        "ts": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?Z$"
+        },
+        "agent": {
+          "type": "string",
+          "minLength": 1
+        },
+        "session": {
+          "type": "string",
+          "minLength": 1
+        },
+        "turn": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "task_id": {
+          "type": "string",
+          "pattern": "^t_[0-9]+_[0-9]+(_[0-9]+)?$"
+        },
+        "kind": {
+          "const": "usage"
+        },
+        "limit_pct": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "limit_window_minutes": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 1
+        },
+        "limit_resets_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        },
+        "weekly_pct": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "context_pct": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "id": {
+          "type": "string",
+          "description": "The agent's own identifier for this event (tool_use_id, prompt_id, turn_id, generation_id); a repeat with the same agent, session, kind and id is skipped."
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "v",
+        "ts",
+        "agent",
+        "session",
+        "turn",
+        "kind",
+        "text"
+      ],
+      "properties": {
+        "v": {
+          "type": "integer",
+          "const": 1
+        },
+        "ts": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?Z$"
+        },
+        "agent": {
+          "type": "string",
+          "minLength": 1
+        },
+        "session": {
+          "type": "string",
+          "minLength": 1
+        },
+        "turn": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "task_id": {
+          "type": "string",
+          "pattern": "^t_[0-9]+_[0-9]+(_[0-9]+)?$"
+        },
+        "kind": {
+          "const": "summary"
+        },
+        "text": {
+          "type": "string"
+        },
+        "at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the agent compacted (Claude Code: the compact_boundary line's timestamp)."
+        },
+        "trigger": {
+          "enum": [
+            "manual",
+            "auto"
+          ]
+        },
+        "pre_tokens": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "post_tokens": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "id": {
+          "type": "string",
+          "description": "The agent's own identifier for this event (tool_use_id, prompt_id, turn_id, generation_id); a repeat with the same agent, session, kind and id is skipped."
+        }
+      }
+    }
+  ]
+}

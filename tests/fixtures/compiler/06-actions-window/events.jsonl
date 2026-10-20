@@ -1,0 +1,15 @@
+{"agent": "claude-code", "kind": "prompt", "session": "session-a", "text": "Build a reliable portable autosave compiler.", "ts": "2026-10-14T12:00:00Z", "turn": 1, "v": 1}
+{"agent": "claude-code", "exit": 0, "files": [], "kind": "tool", "session": "session-a", "summary": "command\n0", "tool": "Bash", "ts": "2026-10-14T12:00:01Z", "turn": 2, "v": 1}
+{"agent": "claude-code", "exit": 0, "files": [], "kind": "tool", "session": "session-a", "summary": "command\n1", "tool": "Bash", "ts": "2026-10-14T12:00:02Z", "turn": 3, "v": 1}
+{"agent": "claude-code", "exit": 0, "files": [], "kind": "tool", "session": "session-a", "summary": "command\n2", "tool": "Bash", "ts": "2026-10-14T12:00:03Z", "turn": 4, "v": 1}
+{"agent": "claude-code", "exit": 0, "files": [], "kind": "tool", "session": "session-a", "summary": "command\n3", "tool": "Bash", "ts": "2026-10-14T12:00:04Z", "turn": 5, "v": 1}
+{"agent": "claude-code", "exit": 0, "files": [], "kind": "tool", "session": "session-a", "summary": "command\n4", "tool": "Bash", "ts": "2026-10-14T12:00:05Z", "turn": 6, "v": 1}
+{"agent": "claude-code", "exit": 0, "files": [], "kind": "tool", "session": "session-a", "summary": "command\n5", "tool": "Bash", "ts": "2026-10-14T12:00:06Z", "turn": 7, "v": 1}
+{"agent": "claude-code", "exit": 0, "files": [], "kind": "tool", "session": "session-a", "summary": "command\n6", "tool": "Bash", "ts": "2026-10-14T12:00:07Z", "turn": 8, "v": 1}
+{"agent": "claude-code", "exit": 0, "files": [], "kind": "tool", "session": "session-a", "summary": "command\n7", "tool": "Bash", "ts": "2026-10-14T12:00:08Z", "turn": 9, "v": 1}
+{"agent": "claude-code", "exit": 0, "files": [], "kind": "tool", "session": "session-a", "summary": "command\n8", "tool": "Bash", "ts": "2026-10-14T12:00:09Z", "turn": 10, "v": 1}
+{"agent": "claude-code", "exit": 0, "files": [], "kind": "tool", "session": "session-a", "summary": "command\n9", "tool": "Bash", "ts": "2026-10-14T12:00:10Z", "turn": 11, "v": 1}
+{"agent": "claude-code", "exit": 0, "files": [], "kind": "tool", "session": "session-a", "summary": "command\n10", "tool": "Bash", "ts": "2026-10-14T12:00:11Z", "turn": 12, "v": 1}
+{"agent": "claude-code", "exit": 0, "files": [], "kind": "tool", "session": "session-a", "summary": "command\n11", "tool": "Bash", "ts": "2026-10-14T12:00:12Z", "turn": 13, "v": 1}
+{"agent": "claude-code", "exit": 0, "files": [], "kind": "tool", "session": "session-a", "summary": "command\n12", "tool": "Bash", "ts": "2026-10-14T12:00:13Z", "turn": 14, "v": 1}
+{"agent": "claude-code", "exit": 0, "files": [], "kind": "tool", "session": "session-a", "summary": "command\n13", "tool": "Bash", "ts": "2026-10-14T12:00:14Z", "turn": 15, "v": 1}

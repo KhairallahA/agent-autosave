@@ -1,0 +1,23 @@
+{
+  "source": "doc-derived: cursor.com/docs/hooks (2026-10-15)",
+  "payload": {
+    "conversation_id": "c-1",
+    "generation_id": "g-1",
+    "model": "claude-4.5-sonnet",
+    "cursor_version": "2.4.21",
+    "workspace_roots": [
+      "/work/repo"
+    ],
+    "user_email": null,
+    "transcript_path": null,
+    "hook_event_name": "postToolUse",
+    "tool_name": "Shell",
+    "tool_input": {
+      "command": "npm test",
+      "cwd": ""
+    },
+    "tool_output": "{\"stdout\": \"1 failing\\nAssertionError: expected 2\", \"stderr\": \"\", \"exitCode\": 1}",
+    "duration": 1200,
+    "tool_use_id": "t-1"
+  }
+}

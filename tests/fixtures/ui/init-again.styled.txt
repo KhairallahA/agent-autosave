@@ -1,0 +1,4 @@
+[1;36magent-autosave init[0m
+
+  [2m=[0m Already set up here; nothing changed.
+    [2mhint:[0m To change agents or preferences: agent-autosave init --reconfigure

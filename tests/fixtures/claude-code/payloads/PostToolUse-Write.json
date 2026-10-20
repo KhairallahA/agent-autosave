@@ -1,0 +1,32 @@
+{
+  "claude_version": "2.1.291",
+  "payload": {
+    "cwd": "/private/tmp/agent-autosave-m2-audit-retry",
+    "duration_ms": 4,
+    "effort": {
+      "level": "medium"
+    },
+    "hook_event_name": "PostToolUse",
+    "permission_mode": "default",
+    "prompt_id": "1d7e540c-3a11-47cc-bcb0-e16a6256ff58",
+    "session_id": "c4e76590-bf89-4379-b56d-4d7db42857b1",
+    "tool_input": {
+      "content": "print(\"hello\")\n",
+      "file_path": "/private/tmp/agent-autosave-m2-audit-retry/hello.py"
+    },
+    "tool_name": "Write",
+    "tool_response": {
+      "content": "print(\"hello\")\n",
+      "filePath": "/private/tmp/agent-autosave-m2-audit-retry/hello.py",
+      "originalFile": null,
+      "structuredPatch": [],
+      "type": "create",
+      "userModified": false
+    },
+    "tool_use_id": "toolu_01K3LvEHvogjqYxn8LZJMH7W",
+    "transcript_path": "~/.claude/projects/-private-tmp-agent-autosave-m2-audit-retry/c4e76590-bf89-4379-b56d-4d7db42857b1.jsonl"
+  },
+  "provenance": "Claude Code hook stdin; secrets and home prefix redacted",
+  "recorded_at": "2026-10-14T18:53:14.139344Z",
+  "v": 1
+}

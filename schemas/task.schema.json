@@ -1,0 +1,213 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "agent-autosave task.json v1",
+  "description": "One task per git branch. The branch checked out is 'current' (\"\" outside git). Each slot's cursor is where its task's events start in events.jsonl; 'previous' is the task archived by the last clear, kept so its still-open sessions' late events reach it.",
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "v",
+        "current",
+        "slots"
+      ],
+      "properties": {
+        "v": {
+          "type": "integer",
+          "const": 1
+        },
+        "current": {
+          "type": "string"
+        },
+        "slots": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "v",
+              "task_id",
+              "started",
+              "cursor"
+            ],
+            "properties": {
+              "v": {
+                "type": "integer",
+                "const": 1
+              },
+              "task_id": {
+                "type": "string",
+                "pattern": "^t_[0-9]+_[0-9]+(_[0-9]+)?$"
+              },
+              "started": {
+                "type": "string",
+                "format": "date-time",
+                "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?Z$"
+              },
+              "cursor": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "identity",
+                  "offset"
+                ],
+                "properties": {
+                  "identity": {
+                    "type": [
+                      "array",
+                      "null"
+                    ],
+                    "items": {
+                      "type": "integer"
+                    },
+                    "description": "[device, inode] of the ledger file the offset belongs to."
+                  },
+                  "offset": {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                }
+              },
+              "start_head": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "previous": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "task_id",
+                  "started"
+                ],
+                "properties": {
+                  "task_id": {
+                    "type": "string",
+                    "pattern": "^t_[0-9]+_[0-9]+(_[0-9]+)?$"
+                  },
+                  "started": {
+                    "type": "string",
+                    "format": "date-time",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?Z$"
+                  },
+                  "cursor": {
+                    "type": "object"
+                  },
+                  "git": {
+                    "type": [
+                      "object",
+                      "null"
+                    ]
+                  },
+                  "sessions": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "v",
+        "task_id",
+        "started",
+        "cursor"
+      ],
+      "properties": {
+        "v": {
+          "type": "integer",
+          "const": 1
+        },
+        "task_id": {
+          "type": "string",
+          "pattern": "^t_[0-9]+_[0-9]+(_[0-9]+)?$"
+        },
+        "started": {
+          "type": "string",
+          "format": "date-time",
+          "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?Z$"
+        },
+        "cursor": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "identity",
+            "offset"
+          ],
+          "properties": {
+            "identity": {
+              "type": [
+                "array",
+                "null"
+              ],
+              "items": {
+                "type": "integer"
+              },
+              "description": "[device, inode] of the ledger file the offset belongs to."
+            },
+            "offset": {
+              "type": "integer",
+              "minimum": 0
+            }
+          }
+        },
+        "start_head": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "previous": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "task_id",
+            "started"
+          ],
+          "properties": {
+            "task_id": {
+              "type": "string",
+              "pattern": "^t_[0-9]+_[0-9]+(_[0-9]+)?$"
+            },
+            "started": {
+              "type": "string",
+              "format": "date-time",
+              "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d{1,6})?Z$"
+            },
+            "cursor": {
+              "type": "object"
+            },
+            "git": {
+              "type": [
+                "object",
+                "null"
+              ]
+            },
+            "sessions": {
+              "type": "array",
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "description": "A task.json written before branch slots: one task, read as the slot of the branch checked out and rewritten in the slot shape at the next event."
+    }
+  ]
+}

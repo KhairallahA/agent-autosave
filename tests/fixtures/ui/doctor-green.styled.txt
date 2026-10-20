@@ -1,0 +1,6 @@
+[1;36magent-autosave doctor[0m
+
+  [32m✓[0m [32mok  [0m [1mClaude Code   [0m All 8 hooks present in .claude/settings.json.
+  [32m✓[0m [32mok  [0m [1mClaude Code   [0m CLAUDE.md block present.
+
+  [32mAll green: 2 checks passed.[0m

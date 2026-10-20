@@ -1,0 +1,6 @@
+agent-autosave remove
+
+  ✓ restored .codex/hooks.json
+  ✓ restored AGENTS.md
+
+  Still installed: Claude Code

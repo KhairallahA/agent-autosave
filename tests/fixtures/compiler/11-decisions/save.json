@@ -1,0 +1,75 @@
+{
+  "agents": [
+    {
+      "agent": "claude-code",
+      "session": "session-a",
+      "transcript": null,
+      "turns": 5
+    }
+  ],
+  "checks": [],
+  "decisions": [
+    "Use local files",
+    "Keep runtime dependency free"
+  ],
+  "failing": null,
+  "files_edited": [],
+  "files_read": [],
+  "files_touched": [],
+  "git": null,
+  "goal": "Build a reliable portable autosave compiler.",
+  "handoffs": [],
+  "interrupted": null,
+  "last_actions": [],
+  "last_actions_shown": [],
+  "last_report": "",
+  "last_report_agent": null,
+  "last_report_at": null,
+  "last_session": {
+    "agent": "claude-code",
+    "ended": false,
+    "session": "session-a"
+  },
+  "latest_request": "",
+  "memory_notes": [
+    {
+      "agent": "claude-code",
+      "at": "2026-10-14T12:00:01Z",
+      "text": "Use local files",
+      "type": "decision"
+    },
+    {
+      "agent": "claude-code",
+      "at": "2026-10-14T12:00:02Z",
+      "text": "Temporary warning",
+      "type": "warning"
+    },
+    {
+      "agent": "claude-code",
+      "at": "2026-10-14T12:00:04Z",
+      "text": "Keep runtime dependency free",
+      "type": "decision"
+    }
+  ],
+  "next_action": "Build a reliable portable autosave compiler.",
+  "notes": [
+    {
+      "text": "Temporary warning",
+      "type": "warning"
+    },
+    {
+      "text": "Deferred item",
+      "type": "todo"
+    }
+  ],
+  "started": "2026-10-14T12:00:00Z",
+  "status": "active",
+  "steering": [],
+  "stuck": null,
+  "summary": null,
+  "task_id": "t_20261014_120000000000",
+  "unknown_exit": [],
+  "updated": "2026-10-14T12:00:04Z",
+  "usage": {},
+  "v": 1
+}

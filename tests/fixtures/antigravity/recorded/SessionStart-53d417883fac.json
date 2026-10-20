@@ -1,0 +1,16 @@
+{
+  "agent": "antigravity",
+  "agent_version": "1.4.2",
+  "payload": {
+    "artifactDirectoryPath": "~/.gemini/antigravity-cli/brain/957037ff-fd44-45c6-8698-406e55371908",
+    "conversationId": "957037ff-fd44-45c6-8698-406e55371908",
+    "modelName": "gemini-4-argon-medium",
+    "transcriptPath": "~/.gemini/antigravity-cli/brain/957037ff-fd44-45c6-8698-406e55371908/.system_generated/logs/transcript_full.jsonl",
+    "workspacePaths": [
+      "/tmp/aa-agy"
+    ]
+  },
+  "provenance": "Real hook stdin captured by agent-autosave record mode; secrets redacted, home directory shown as ~",
+  "recorded_at": "2026-10-19T19:23:43.415497Z",
+  "v": 1
+}

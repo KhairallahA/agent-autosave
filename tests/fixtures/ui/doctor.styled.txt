@@ -1,0 +1,10 @@
+[1;36magent-autosave doctor[0m
+
+  [32m✓[0m [32mok  [0m [1magent-autosave[0m Hook command found: ~/.local/bin/agent-autosave
+  [32m✓[0m [32mok  [0m [1mClaude Code   [0m All 8 hooks present in .claude/settings.json.
+  [33m![0m [33mwarn[0m [1mCodex         [0m Codex has not been run in this folder yet.
+         [2mhint: Start codex here, open /hooks and trust the agent-autosave hooks.[0m
+  [31m✗[0m [31mFAIL[0m [1mCursor        [0m [31mThe stop hook is missing from .cursor/hooks.json.[0m
+         [2mhint: agent-autosave add cursor[0m
+
+  [31m1 problem, 1 warning.[0m

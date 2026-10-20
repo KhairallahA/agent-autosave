@@ -1,0 +1,9 @@
+{
+  "name": "cursor",
+  "description": "Cursor: hooks in .cursor/hooks.json; save injected on the first prompt of each conversation (beforeSubmitPrompt), with an always-apply rule in .cursor/rules as the fallback.",
+  "files": [
+    {"src": "hooks.json", "dst": ".cursor/hooks.json", "merge_policy": "merge_json"},
+    {"src": "agent-autosave.mdc", "dst": ".cursor/rules/agent-autosave.mdc", "merge_policy": "create_file"},
+    {"src": "mcp.json", "dst": ".cursor/mcp.json", "merge_policy": "merge_json", "feature": "mcp"}
+  ]
+}

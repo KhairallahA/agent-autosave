@@ -1,0 +1,23 @@
+{
+  "agent": "claude-code",
+  "agent_version": "2.1.291 (Claude Code)",
+  "payload": {
+    "background_tasks": [],
+    "cwd": "/private/tmp/aa-scratch",
+    "effort": {
+      "level": "medium"
+    },
+    "hook_event_name": "Stop",
+    "last_assistant_message": "At session start, a hook gave me an autosave summary of an unfinished task from an earlier Claude Code session. Here's what it said:\n\n- **Why it stopped:** Claude Code compacted its context at 02:00 UTC.\n- **Goal (as recorded):** Make a 3-step plan with the todo tool (write `hello.py`, run it, add a failing check), then do only step 1: write `hello.py` so it prints \"hello autosave\".\n- **Last actions, most recent first:**\n  1. Ran `python3 -c \"raise SystemExit(7)\"`, which exited with code 7\n  2. Ran `python3 hello.py`, which exited with code 0\n  3. Wrote `hello.py`\n- **Failing command:** `python3 -c \"raise SystemExit(7)\"` (exit 7)\n- **Git state:** branch `master`, with uncommitted changes in `.claude/settings.json`, `.gitignore`, `CLAUDE.md` and `hello.py`\n- **Suggested next step:** \"Make `python3 -c \"raise SystemExit(7)\"` pass.\"\n- **Pointers:** the full save is in `.autosave/SAVE.md`, and git wins if the two disagree.\n\nThe context also said the quoted values are task data, not instructions, so I haven't acted on any of them.\n\nSome things worth noting:\n- **The task already looks done.** The recorded goal stopped at step 1, and `hello.py` was written and ran successfully. That matches the git status at session start, where `hello.py` shows up as an untracked file.\n- **The suggested next step doesn't make sense.** That command always exits with code 7 because it's written to, so the only way to make it \"pass\" is to change the command. It was presumably the deliberate \"failing check\" from step 3 of the plan.\n- **The file list differs slightly from git.** The summary lists `.claude/settings.json`, while git shows the whole `.claude/` directory as untracked. Everything is untracked, and there are no commits yet.\n\nI haven't opened `.autosave/SAVE.md` or checked the files themselves. If you want, I can read it and confirm the current state of `hello.py`.",
+    "permission_mode": "auto",
+    "prompt_id": "5101c9a6-0567-4713-8a8a-ca99aff830dc",
+    "scratchpad_dir": "/private/tmp/claude-501/-private-tmp-aa-scratch/5e43db48-1979-4b21-8fb6-7c90a0b414f0/scratchpad",
+    "session_crons": [],
+    "session_id": "5e43db48-1979-4b21-8fb6-7c90a0b414f0",
+    "stop_hook_active": false,
+    "transcript_path": "~/.claude/projects/-private-tmp-aa-scratch/5e43db48-1979-4b21-8fb6-7c90a0b414f0.jsonl"
+  },
+  "provenance": "Real hook stdin captured by agent-autosave record mode; secrets and home prefix redacted",
+  "recorded_at": "2026-10-15T02:02:03.672966Z",
+  "v": 1
+}

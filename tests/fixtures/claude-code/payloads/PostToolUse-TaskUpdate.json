@@ -1,0 +1,35 @@
+{
+  "claude_version": "2.1.291",
+  "payload": {
+    "cwd": "/private/tmp/agent-autosave-m2-audit-retry",
+    "duration_ms": 13,
+    "effort": {
+      "level": "medium"
+    },
+    "hook_event_name": "PostToolUse",
+    "permission_mode": "default",
+    "prompt_id": "5d0bbe51-58b6-4ae6-931f-253bb3d39157",
+    "session_id": "3b2d7da8-67ee-4b5a-b763-60fe23d26cf6",
+    "tool_input": {
+      "status": "in_progress",
+      "taskId": "1"
+    },
+    "tool_name": "TaskUpdate",
+    "tool_response": {
+      "statusChange": {
+        "from": "pending",
+        "to": "in_progress"
+      },
+      "success": true,
+      "taskId": "1",
+      "updatedFields": [
+        "status"
+      ]
+    },
+    "tool_use_id": "toolu_01PvniUseXcZS5bxFT5FMK3V",
+    "transcript_path": "~/.claude/projects/-private-tmp-agent-autosave-m2-audit-retry/3b2d7da8-67ee-4b5a-b763-60fe23d26cf6.jsonl"
+  },
+  "provenance": "Claude Code hook stdin; secrets and home prefix redacted",
+  "recorded_at": "2026-10-14T18:54:20.581788Z",
+  "v": 1
+}

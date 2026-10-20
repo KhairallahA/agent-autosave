@@ -1,0 +1,1 @@
+agent-autosave: Codex has used 91% of its 5-hour limit. Before continuing, record a short handoff (what is done, what is next, anything risky) with: agent-autosave note --quiet --type handoff "..."

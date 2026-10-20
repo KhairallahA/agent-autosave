@@ -1,0 +1,28 @@
+{
+  "agent": "antigravity",
+  "agent_version": "1.4.2",
+  "payload": {
+    "artifactDirectoryPath": "~/.gemini/antigravity-cli/brain/957037ff-fd44-45c6-8698-406e55371908",
+    "conversationId": "957037ff-fd44-45c6-8698-406e55371908",
+    "error": "",
+    "modelName": "gemini-4-argon-medium",
+    "stepIdx": 3,
+    "toolCall": {
+      "args": {
+        "CommandLine": "python3 -c \"raise SystemExit(3)\"",
+        "Cwd": "/tmp/aa-agy",
+        "WaitMsBeforeAsync": 5000,
+        "toolAction": "Running python3 exit command",
+        "toolSummary": "Run python3 command"
+      },
+      "name": "run_command"
+    },
+    "transcriptPath": "~/.gemini/antigravity-cli/brain/957037ff-fd44-45c6-8698-406e55371908/.system_generated/logs/transcript_full.jsonl",
+    "workspacePaths": [
+      "/tmp/aa-agy"
+    ]
+  },
+  "provenance": "Real hook stdin captured by agent-autosave record mode; secrets redacted, home directory shown as ~",
+  "recorded_at": "2026-10-19T19:24:11.512428Z",
+  "v": 1
+}

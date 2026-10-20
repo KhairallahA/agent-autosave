@@ -1,0 +1,8 @@
+{
+  "name": "opencode",
+  "description": "OpenCode: a plugin in .opencode/plugins/agent-autosave.js that pipes session and tool events to agent-autosave (from the docs, not yet recorded); shares the AGENTS.md block.",
+  "files": [
+    {"src": "agent-autosave.js", "dst": ".opencode/plugins/agent-autosave.js", "merge_policy": "create_file"},
+    {"src": "AGENTS.block.md", "dst": "AGENTS.md", "merge_policy": "managed_block"}
+  ]
+}

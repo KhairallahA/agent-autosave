@@ -1,0 +1,10 @@
+agent-autosave doctor
+
+  ✓ ok   agent-autosave Hook command found: ~/.local/bin/agent-autosave
+  ✓ ok   Claude Code    All 8 hooks present in .claude/settings.json.
+  ! warn Codex          Codex has not been run in this folder yet.
+         hint: Start codex here, open /hooks and trust the agent-autosave hooks.
+  ✗ FAIL Cursor         The stop hook is missing from .cursor/hooks.json.
+         hint: agent-autosave add cursor
+
+  1 problem, 1 warning.

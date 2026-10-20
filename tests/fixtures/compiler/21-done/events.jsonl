@@ -1,0 +1,3 @@
+{"agent": "claude-code", "kind": "prompt", "session": "session-a", "text": "Build a reliable portable autosave compiler.", "ts": "2026-10-14T12:00:00Z", "turn": 1, "v": 1}
+{"agent": "claude-code", "items": [{"state": "done", "step": "Implement compiler"}], "kind": "plan", "session": "session-a", "ts": "2026-10-14T12:00:01Z", "turn": 2, "v": 1}
+{"agent": "claude-code", "kind": "turn_end", "session": "session-a", "ts": "2026-10-14T12:00:02Z", "turn": 3, "v": 1}

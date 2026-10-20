@@ -1,0 +1,28 @@
+{
+  "cursor": {
+    "identity": [
+      65040,
+      1558455
+    ],
+    "offset": 2000
+  },
+  "previous": {
+    "cursor": {
+      "identity": null,
+      "offset": 0
+    },
+    "git": null,
+    "sessions": [
+      [
+        "claude-code",
+        "S1"
+      ]
+    ],
+    "started": "2026-10-17T21:03:29.078181Z",
+    "task_id": "t_20261017_210329078181"
+  },
+  "start_head": null,
+  "started": "2026-10-17T21:03:29.110466Z",
+  "task_id": "t_20261017_210329110466",
+  "v": 1
+}

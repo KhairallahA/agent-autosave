@@ -1,0 +1,3 @@
+agent-autosave history
+
+  No archived saves yet. A save is archived when you run agent-autosave clear.

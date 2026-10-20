@@ -1,0 +1,46 @@
+{
+  "agents": [
+    {
+      "agent": "claude-code",
+      "session": "session-a",
+      "transcript": null,
+      "turns": 2
+    }
+  ],
+  "checks": [],
+  "decisions": [],
+  "failing": null,
+  "files_edited": [],
+  "files_read": [],
+  "files_touched": [],
+  "git": null,
+  "goal": "Build a reliable portable autosave compiler.",
+  "handoffs": [],
+  "interrupted": {
+    "agent": "claude-code",
+    "at": "2026-10-14T12:00:01Z",
+    "reason": "compact"
+  },
+  "last_actions": [],
+  "last_actions_shown": [],
+  "last_report": "",
+  "last_report_agent": null,
+  "last_report_at": null,
+  "last_session": {
+    "agent": "claude-code",
+    "ended": false,
+    "session": "session-a"
+  },
+  "latest_request": "",
+  "next_action": "Build a reliable portable autosave compiler.",
+  "started": "2026-10-14T12:00:00Z",
+  "status": "interrupted",
+  "steering": [],
+  "stuck": null,
+  "summary": null,
+  "task_id": "t_20261014_120000000000",
+  "unknown_exit": [],
+  "updated": "2026-10-14T12:00:01Z",
+  "usage": {},
+  "v": 1
+}

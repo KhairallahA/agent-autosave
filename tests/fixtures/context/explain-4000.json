@@ -1,0 +1,80 @@
+[
+  {
+    "name": "header",
+    "priority": 1,
+    "chars": 209,
+    "state": "kept"
+  },
+  {
+    "name": "notes",
+    "priority": 2,
+    "chars": 195,
+    "state": "kept"
+  },
+  {
+    "name": "goal",
+    "priority": 3,
+    "chars": 181,
+    "state": "kept"
+  },
+  {
+    "name": "failing",
+    "priority": 4,
+    "chars": 231,
+    "state": "kept"
+  },
+  {
+    "name": "stuck",
+    "priority": 5,
+    "chars": 131,
+    "state": "kept"
+  },
+  {
+    "name": "plan",
+    "priority": 6,
+    "chars": 139,
+    "state": "kept"
+  },
+  {
+    "name": "last_message",
+    "priority": 7,
+    "chars": 111,
+    "state": "kept"
+  },
+  {
+    "name": "decisions",
+    "priority": 8,
+    "chars": 153,
+    "state": "kept"
+  },
+  {
+    "name": "memory",
+    "priority": 9,
+    "chars": 220,
+    "state": "kept"
+  },
+  {
+    "name": "checks",
+    "priority": 10,
+    "chars": 123,
+    "state": "kept"
+  },
+  {
+    "name": "last_actions",
+    "priority": 11,
+    "chars": 163,
+    "state": "kept"
+  },
+  {
+    "name": "git",
+    "priority": 12,
+    "chars": 288,
+    "state": "kept"
+  },
+  {
+    "name": "usage_summary",
+    "priority": 13,
+    "chars": 239,
+    "state": "kept"
+  }
+]

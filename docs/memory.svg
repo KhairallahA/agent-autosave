@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="330" viewBox="0 0 960 330" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <title>How agent-autosave remembers</title>
+  <desc>Agents record decisions, dead ends and warnings as notes; when a task is finished they become candidates; you review them and accept, edit or reject each one; accepted entries go into MEMORY.md, in the repo or an Obsidian vault; later sessions are given them at session start, and prompts about the same thing get the matching ones. Each finished task also gets a journal page.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .box { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; }
+      .key { fill: #ecfeff; stroke: #06b6d4; stroke-width: 1.5; }
+      .agent { fill: #f5f3ff; stroke: #8b5cf6; stroke-width: 1.5; }
+      .done { fill: #f0fdf4; stroke: #22c55e; stroke-width: 1.5; }
+      .step { font-size: 11px; font-weight: 700; fill: #8b5cf6; letter-spacing: 0.06em; }
+      .title { font-size: 15px; font-weight: 600; fill: #0f172a; }
+      .text { font-size: 12px; fill: #475569; }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11px; fill: #0e7490; }
+      .edge { stroke: #64748b; stroke-width: 1.6; fill: none; marker-end: url(#arrow); }
+      .label { font-size: 11.5px; fill: #64748b; }
+    </style>
+  </defs>
+  <rect x="0" y="0" width="960" height="330" rx="14" fill="#f8fafc"/>
+
+  <rect class="agent" x="20" y="40" width="160" height="150" rx="10"/>
+  <text class="step" x="34" y="62">1 · NOTE</text>
+  <text class="title" x="34" y="84">Any agent</text>
+  <text class="mono" x="34" y="106">note --type decision</text>
+  <text class="text" x="34" y="128">decisions, dead ends,</text>
+  <text class="text" x="34" y="146">warnings, as it works</text>
+  <text class="text" x="34" y="170">(or the MCP tool)</text>
+
+  <rect class="box" x="212" y="40" width="160" height="150" rx="10"/>
+  <text class="step" x="226" y="62">2 · PROPOSE</text>
+  <text class="title" x="226" y="84">Candidates</text>
+  <text class="mono" x="226" y="106">candidates.jsonl</text>
+  <text class="text" x="226" y="128">proposed when the</text>
+  <text class="text" x="226" y="146">task is finished;</text>
+  <text class="text" x="226" y="164">agents only propose</text>
+
+  <rect class="box" x="404" y="40" width="160" height="150" rx="10"/>
+  <text class="step" x="418" y="62">3 · REVIEW</text>
+  <text class="title" x="418" y="84">You</text>
+  <text class="mono" x="418" y="106">memory review</text>
+  <text class="text" x="418" y="128">accept, edit, reject</text>
+  <text class="text" x="418" y="146">or skip each one;</text>
+  <text class="text" x="418" y="164">pin what matters most</text>
+
+  <rect class="key" x="596" y="40" width="160" height="150" rx="10"/>
+  <text class="step" x="610" y="62">4 · KEEP</text>
+  <text class="title" x="610" y="84">Project memory</text>
+  <text class="mono" x="610" y="106">MEMORY.md</text>
+  <text class="text" x="610" y="128">plain Markdown, in the</text>
+  <text class="text" x="610" y="146">repo or your Obsidian</text>
+  <text class="text" x="610" y="164">vault; edit it by hand</text>
+
+  <rect class="done" x="788" y="40" width="152" height="150" rx="10"/>
+  <text class="step" x="802" y="62" style="fill:#16a34a">5 · RECALL</text>
+  <text class="title" x="802" y="84">Later sessions</text>
+  <text class="text" x="802" y="106">get the entries at</text>
+  <text class="text" x="802" y="124">session start, and a</text>
+  <text class="text" x="802" y="142">prompt about the same</text>
+  <text class="text" x="802" y="160">thing gets the matches</text>
+
+  <path class="edge" d="M180,115 L210,115"/>
+  <path class="edge" d="M372,115 L402,115"/>
+  <path class="edge" d="M564,115 L594,115"/>
+  <path class="edge" d="M756,115 L786,115"/>
+
+  <rect class="box" x="404" y="226" width="536" height="72" rx="10"/>
+  <text class="mono" x="420" y="254">journal/YYYY/MM/*.md</text>
+  <text class="text" x="420" y="278">each finished task also gets a journal page: its goal, plan, outcome and notes</text>
+  <path class="edge" d="M672,226 L672,192"/>
+  <text class="label" x="20" y="254">No model writes memory: entries are</text>
+  <text class="label" x="20" y="272">the agents' own notes, kept only if you accept.</text>
+</svg>

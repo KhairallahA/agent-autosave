@@ -1,0 +1,21 @@
+{
+  "claude_version": "2.1.291",
+  "payload": {
+    "background_tasks": [],
+    "cwd": "/private/tmp/agent-autosave-m2-audit-retry",
+    "effort": {
+      "level": "medium"
+    },
+    "hook_event_name": "Stop",
+    "last_assistant_message": "I added two steps to the todo list:\n1. **Implement hello.py**: in progress\n2. **Validate output**: pending\n\nAs you asked, I didn't do any implementation work.",
+    "permission_mode": "default",
+    "prompt_id": "ff89f68c-5eb7-4b98-a582-7b4761d36a6a",
+    "session_crons": [],
+    "session_id": "8a4b738b-a9d5-4d8d-ab01-65f2ff2dc780",
+    "stop_hook_active": false,
+    "transcript_path": "~/.claude/projects/-private-tmp-agent-autosave-m2-audit-retry/8a4b738b-a9d5-4d8d-ab01-65f2ff2dc780.jsonl"
+  },
+  "provenance": "Claude Code hook stdin; secrets and home prefix redacted",
+  "recorded_at": "2026-10-14T18:54:46.018830Z",
+  "v": 1
+}

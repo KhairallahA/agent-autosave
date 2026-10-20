@@ -1,0 +1,15 @@
+{
+  "agent": "claude-code",
+  "agent_version": "2.1.291 (Claude Code)",
+  "payload": {
+    "cwd": "/private/tmp/aa-scratch",
+    "hook_event_name": "SessionStart",
+    "scratchpad_dir": "/private/tmp/claude-501/-private-tmp-aa-scratch/8d497798-4243-4f8a-9e8d-d9a398498a54/scratchpad",
+    "session_id": "8d497798-4243-4f8a-9e8d-d9a398498a54",
+    "source": "clear",
+    "transcript_path": "~/.claude/projects/-private-tmp-aa-scratch/8d497798-4243-4f8a-9e8d-d9a398498a54.jsonl"
+  },
+  "provenance": "Real hook stdin captured by agent-autosave record mode; secrets and home prefix redacted",
+  "recorded_at": "2026-10-15T02:00:42.905961Z",
+  "v": 1
+}

@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="400" viewBox="0 0 960 400" font-family="ui-sans-serif, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif">
+  <title>How agent-autosave works</title>
+  <desc>An agent's hooks (or OpenCode's plugin) send each event to agent-autosave, which appends it to the ledger in .autosave/events.jsonl; the compiler folds the ledger into save.json and SAVE.md; the loader gives the save to the next session or agent, at session start or as the first prompt of resume and go.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .box { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; }
+      .key { fill: #ecfeff; stroke: #06b6d4; stroke-width: 1.5; }
+      .agent { fill: #f5f3ff; stroke: #8b5cf6; stroke-width: 1.5; }
+      .title { font-size: 15px; font-weight: 600; fill: #0f172a; }
+      .text { font-size: 12.5px; fill: #475569; }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; fill: #0e7490; }
+      .edge { stroke: #64748b; stroke-width: 1.6; fill: none; marker-end: url(#arrow); }
+      .label { font-size: 11.5px; fill: #64748b; }
+    </style>
+  </defs>
+  <rect x="0" y="0" width="960" height="400" rx="14" fill="#f8fafc"/>
+
+  <!-- top row: the recording path -->
+  <rect class="agent" x="24" y="40" width="170" height="104" rx="10"/>
+  <text class="title" x="40" y="66">Agent session</text>
+  <text class="text" x="40" y="86">Claude Code · Codex ·</text>
+  <text class="text" x="40" y="102">Cursor · Gemini CLI ·</text>
+  <text class="text" x="40" y="118">Antigravity · Copilot ·</text>
+  <text class="text" x="40" y="134">OpenCode · any agent</text>
+
+  <rect class="box" x="246" y="40" width="190" height="104" rx="10"/>
+  <text class="title" x="262" y="66">Hook entry point</text>
+  <text class="mono" x="262" y="88">agent-autosave hook</text>
+  <text class="text" x="262" y="108">normalize · redact</text>
+  <text class="text" x="262" y="126">always exits 0, &lt; 300 ms</text>
+
+  <rect class="key" x="488" y="40" width="190" height="104" rx="10"/>
+  <text class="title" x="504" y="66">Ledger</text>
+  <text class="mono" x="504" y="88">.autosave/events.jsonl</text>
+  <text class="text" x="504" y="108">one event per line,</text>
+  <text class="text" x="504" y="126">append only, locked</text>
+
+  <rect class="box" x="730" y="40" width="206" height="104" rx="10"/>
+  <text class="title" x="746" y="66">Compiler</text>
+  <text class="text" x="746" y="88">a pure fold: same events,</text>
+  <text class="text" x="746" y="106">same bytes; no LLM,</text>
+  <text class="text" x="746" y="124">no clock, no network</text>
+
+  <path class="edge" d="M194,92 L242,92"/>
+  <text class="label" x="200" y="84">payload</text>
+  <path class="edge" d="M436,92 L484,92"/>
+  <text class="label" x="444" y="84">event</text>
+  <path class="edge" d="M678,92 L726,92"/>
+
+  <!-- bottom row: the save and who reads it -->
+  <rect class="key" x="730" y="230" width="206" height="118" rx="10"/>
+  <text class="title" x="746" y="256">The save</text>
+  <text class="mono" x="746" y="278">save.json</text>
+  <text class="mono" x="746" y="296">SAVE.md</text>
+  <text class="text" x="746" y="318">goal, plan, where it stopped,</text>
+  <text class="text" x="746" y="335">what fails, next action</text>
+  <path class="edge" d="M833,144 L833,226"/>
+  <text class="label" x="842" y="190">rebuilt on each turn</text>
+
+  <rect class="box" x="430" y="230" width="248" height="118" rx="10"/>
+  <text class="title" x="446" y="256">Loader</text>
+  <text class="text" x="446" y="278">the context block for a new</text>
+  <text class="text" x="446" y="296">session (SessionStart), or the</text>
+  <text class="text" x="446" y="314">first prompt for</text>
+  <text class="mono" x="541" y="314">resume · go</text>
+  <text class="text" x="446" y="334">says "trust git" if stale</text>
+  <path class="edge" d="M730,289 L682,289"/>
+
+  <rect class="agent" x="190" y="230" width="190" height="118" rx="10"/>
+  <text class="title" x="206" y="256">Next agent</text>
+  <text class="text" x="206" y="278">same agent after a crash,</text>
+  <text class="text" x="206" y="296">or a different one</text>
+  <text class="text" x="206" y="314">(a handoff), picks up</text>
+  <text class="text" x="206" y="332">where the last one stopped</text>
+  <path class="edge" d="M430,289 L384,289"/>
+
+  <rect class="box" x="24" y="230" width="154" height="118" rx="10"/>
+  <text class="title" x="40" y="256">You</text>
+  <text class="mono" x="40" y="278">status · watch</text>
+  <text class="mono" x="40" y="296">go · resume</text>
+  <text class="mono" x="40" y="314">note · plan</text>
+  <text class="mono" x="40" y="332">memory</text>
+
+  <path class="edge" d="M285,230 C285,190 110,190 110,148"/>
+  <text class="label" x="120" y="186">its hooks record too</text>
+  <path class="edge" d="M178,370 C400,392 820,392 833,352"/>
+  <text class="label" x="420" y="372">reads and annotates the save</text>
+</svg>

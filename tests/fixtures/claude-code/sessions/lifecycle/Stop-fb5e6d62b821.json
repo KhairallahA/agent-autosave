@@ -1,0 +1,23 @@
+{
+  "agent": "claude-code",
+  "agent_version": "2.1.291 (Claude Code)",
+  "payload": {
+    "background_tasks": [],
+    "cwd": "/private/tmp/aa-scratch",
+    "effort": {
+      "level": "medium"
+    },
+    "hook_event_name": "Stop",
+    "last_assistant_message": "I wrote `hello.py`, which prints `hello autosave`. That finishes step 1. I haven't run it, because that's step 2.\n\nWhat's left:\n- [x] 1. Write `hello.py`\n- [ ] 2. Run it\n- [ ] 3. Add a failing check",
+    "permission_mode": "auto",
+    "prompt_id": "44882a80-55b7-4efa-a4af-7aa440ef2607",
+    "scratchpad_dir": "/private/tmp/claude-501/-private-tmp-aa-scratch/5145dfc5-3aa4-4543-880d-5fabc745c93b/scratchpad",
+    "session_crons": [],
+    "session_id": "5145dfc5-3aa4-4543-880d-5fabc745c93b",
+    "stop_hook_active": false,
+    "transcript_path": "~/.claude/projects/-private-tmp-aa-scratch/5145dfc5-3aa4-4543-880d-5fabc745c93b.jsonl"
+  },
+  "provenance": "Real hook stdin captured by agent-autosave record mode; secrets and home prefix redacted",
+  "recorded_at": "2026-10-15T01:58:49.006783Z",
+  "v": 1
+}

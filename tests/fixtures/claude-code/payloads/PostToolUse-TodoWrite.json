@@ -1,0 +1,49 @@
+{
+  "claude_version": "2.1.291",
+  "payload": {
+    "cwd": "/private/tmp/agent-autosave-m2-audit-retry",
+    "duration_ms": 1,
+    "effort": {
+      "level": "medium"
+    },
+    "hook_event_name": "PostToolUse",
+    "permission_mode": "default",
+    "prompt_id": "ff89f68c-5eb7-4b98-a582-7b4761d36a6a",
+    "session_id": "8a4b738b-a9d5-4d8d-ab01-65f2ff2dc780",
+    "tool_input": {
+      "todos": [
+        {
+          "activeForm": "Implementing hello.py",
+          "content": "Implement hello.py",
+          "status": "in_progress"
+        },
+        {
+          "activeForm": "Validating output",
+          "content": "Validate output",
+          "status": "pending"
+        }
+      ]
+    },
+    "tool_name": "TodoWrite",
+    "tool_response": {
+      "newTodos": [
+        {
+          "activeForm": "Implementing hello.py",
+          "content": "Implement hello.py",
+          "status": "in_progress"
+        },
+        {
+          "activeForm": "Validating output",
+          "content": "Validate output",
+          "status": "pending"
+        }
+      ],
+      "oldTodos": []
+    },
+    "tool_use_id": "toolu_01T8BmgUcdY41BGxpAdyXhDp",
+    "transcript_path": "~/.claude/projects/-private-tmp-agent-autosave-m2-audit-retry/8a4b738b-a9d5-4d8d-ab01-65f2ff2dc780.jsonl"
+  },
+  "provenance": "Claude Code hook stdin; secrets and home prefix redacted",
+  "recorded_at": "2026-10-14T18:54:44.084775Z",
+  "v": 1
+}

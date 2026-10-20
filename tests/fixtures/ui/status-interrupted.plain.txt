@@ -1,0 +1,10 @@
+agent-autosave status  updated 2026-10-15 09:30 UTC
+  ! This save may be stale: 2 commits landed since.
+
+  Status    interrupted (rate_limit in Claude Code at 2026-10-15 09:29 UTC)
+  Goal      Migrate auth to OAuth2
+  Plan      1 of 3 done
+  Next      Finish the token refresh in src/auth.ts
+  Handoffs  none
+
+  Full save: agent-autosave show   Continue in another agent: agent-autosave resume <agent>

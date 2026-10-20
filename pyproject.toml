@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-autosave"
+dynamic = ["version"]
+description = "Autosave for coding agents: portable task state in your repository."
+readme = "README.md"
+requires-python = ">=3.9"
+license = "Apache-2.0"
+license-files = ["LICENSE", "NOTICE"]
+authors = [{name = "Khairallah"}]
+keywords = ["ai", "coding-agent", "claude-code", "codex", "cursor", "handoff", "autosave"]
+dependencies = []
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Operating System :: MacOS",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
+
+[project.urls]
+Homepage = "https://github.com/KhairallahA/agent-autosave"
+Documentation = "https://github.com/KhairallahA/agent-autosave/tree/main/docs"
+Changelog = "https://github.com/KhairallahA/agent-autosave/blob/main/CHANGELOG.md"
+Issues = "https://github.com/KhairallahA/agent-autosave/issues"
+
+[project.optional-dependencies]
+test = ["pytest>=7,<9", "pytest-xdist>=3", "pytest-timeout>=2"]
+
+[project.scripts]
+agent-autosave = "agent_autosave.cli:main"
+
+[tool.setuptools.dynamic]
+version = {attr = "agent_autosave.__version__"}
+
+[tool.setuptools.packages.find]
+include = ["agent_autosave*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --durations=10"
+timeout = 60
+markers = ["slow: benchmarks, fuzzing, concurrency and whole-process timing (skip with -m 'not slow')"]
+
+[tool.setuptools.package-data]
+"agent_autosave.resources" = ["*/*.json", "*/*.md", "*/*.mdc", "*/*.toml", "*/*.js"]

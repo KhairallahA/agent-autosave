@@ -1,0 +1,6 @@
+agent-autosave doctor
+
+  ✓ ok   Claude Code    All 8 hooks present in .claude/settings.json.
+  ✓ ok   Claude Code    CLAUDE.md block present.
+
+  All green: 2 checks passed.
