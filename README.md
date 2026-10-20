@@ -20,18 +20,12 @@ any other agent that runs shell commands. It does three things:
   the repo or your Obsidian vault) that later sessions are given. Every
   finished task gets a journal page.
 
-<!-- DEMO VIDEO PLACEHOLDER (maintainer): put the real Claude Code -> Codex
-handoff recording here. On GitHub, edit this file in the browser and drag
-the .mp4 onto this line to get a user-attachments link, then delete this
-comment and the placeholder line below. Keep the GIF: it is the same story
-with stand-in agents. -->
-> **▶ Demo video: coming soon.** _Placeholder for the real recording of Claude
+<!-- > **▶ Demo video: coming soon.** _Placeholder for the real recording of Claude -->
 > Code hitting its limit and Codex finishing the task._
 
 ![agent-autosave go: Claude Code writes a handoff note at 88%, hits its limit, and Codex starts with the plan, the failing test and a remembered decision](https://raw.githubusercontent.com/KhairallahA/agent-autosave/main/docs/demo.gif)
 
-The GIF is a real run of agent-autosave with scripted stand-ins for both
-agents ([how it is made](https://github.com/KhairallahA/agent-autosave/blob/main/docs/demo/make.py)).
+The GIF is a real run of agent-autosave with scripted stand-ins for both agents.
 
 ![How agent-autosave works: hooks, ledger, compiler, save, loader](https://raw.githubusercontent.com/KhairallahA/agent-autosave/main/docs/diagram.svg)
 
